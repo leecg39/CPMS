@@ -205,13 +205,13 @@ export const InspectionModal: React.FC<InspectionModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-800 bg-slate-100 rounded-full transition-colors cursor-pointer"
+              className="px-4 py-2 btn-outline btn-sm text-xs font-bold rounded-full cursor-pointer"
             >
               닫기
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full transition-all shadow-md shadow-emerald-600/20 cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2 btn-primary btn-sm text-xs font-bold rounded-full cursor-pointer flex items-center gap-1.5"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>검수 완료 및 인수증 서명 승인</span>

@@ -154,13 +154,13 @@ export const NewQuotationModal: React.FC<NewQuotationModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs font-bold text-slate-600 bg-slate-100 rounded-xl"
+              className="px-4 py-2 btn-outline btn-sm text-xs font-bold rounded-full cursor-pointer"
             >
               취소
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 rounded-full shadow-md cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2 btn-primary btn-sm text-xs font-bold rounded-full cursor-pointer flex items-center gap-1.5"
             >
               <Plus className="w-4 h-4" />
               <span>견적서 제출 완료</span>
@@ -293,12 +293,12 @@ export const NewDeliveryModal: React.FC<NewDeliveryModalProps> = ({
           </div>
 
           <div className="pt-3 border-t border-slate-200 flex items-center justify-end gap-2">
-            <button type="button" onClick={onClose} className="px-4 py-2 text-xs font-bold text-slate-600 bg-slate-100 rounded-xl">
+            <button type="button" onClick={onClose} className="px-4 py-2 btn-outline btn-sm text-xs font-bold rounded-full cursor-pointer">
               취소
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white bg-cyan-600 hover:bg-cyan-500 rounded-full shadow-md cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2 btn-primary btn-sm text-xs font-bold rounded-full cursor-pointer flex items-center gap-1.5"
             >
               <Truck className="w-4 h-4" />
               <span>배송 출하 등록 확정</span>
@@ -450,12 +450,12 @@ export const NewInvoiceModal: React.FC<NewInvoiceModalProps> = ({
           </div>
 
           <div className="pt-3 border-t border-slate-200 flex items-center justify-end gap-2">
-            <button type="button" onClick={onClose} className="px-4 py-2 text-xs font-bold text-slate-600 bg-slate-100 rounded-xl">
+            <button type="button" onClick={onClose} className="px-4 py-2 btn-outline btn-sm text-xs font-bold rounded-full cursor-pointer">
               취소
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white bg-purple-600 hover:bg-purple-500 rounded-full shadow-md cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2 btn-primary btn-sm text-xs font-bold rounded-full cursor-pointer flex items-center gap-1.5"
             >
               <Receipt className="w-4 h-4" />
               <span>세금계산서 청구 발행</span>

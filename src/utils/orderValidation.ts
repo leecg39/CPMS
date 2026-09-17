@@ -140,6 +140,19 @@ export interface ValidationReport {
   passedFields: string[];
 }
 
+function toLocalIsoDate(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function addLocalDays(date: Date, days: number): Date {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate() + days);
+}
+
+const SAME_DAY_BUFFER_DAYS = 3;
+
 // Check Order Form Fields
 export function validateOrderForm(data: {
   materialId?: string;
@@ -150,7 +163,7 @@ export function validateOrderForm(data: {
   deliveryAddress: string;
   specification: string;
   siteName: string;
-}): ValidationReport {
+}, options?: { now?: Date }): ValidationReport {
   const issues: ValidationIssue[] = [];
   const passedFields: string[] = [];
 
@@ -252,7 +265,11 @@ export function validateOrderForm(data: {
 
   // 4. 납기 희망일 (requestedDeliveryDate) Check
   const dateStr = data.requestedDeliveryDate ? data.requestedDeliveryDate.trim() : '';
-  const todayStr = '2026-09-17'; // Current context date
+  const now = options?.now ?? new Date();
+  const todayStr = toLocalIsoDate(now);
+  const leadDays = Math.max(matchedMat.leadTimeDays, 1);
+  const suggestedFromLead = toLocalIsoDate(addLocalDays(now, leadDays));
+  const suggestedFromBuffer = toLocalIsoDate(addLocalDays(now, SAME_DAY_BUFFER_DAYS));
 
   if (!dateStr) {
     issues.push({
@@ -261,8 +278,8 @@ export function validateOrderForm(data: {
       type: 'ERROR',
       reason: '자재 현장 반입 납기 희망 일자가 누락되었습니다.',
       currentValue: '(누락)',
-      suggestedValue: '2026-09-22',
-      suggestedActionName: '적정 리드타임 납기일(2026-09-22) 지정'
+      suggestedValue: suggestedFromLead,
+      suggestedActionName: `적정 리드타임 납기일(${suggestedFromLead}) 지정`
     });
   } else if (dateStr < todayStr) {
     issues.push({
@@ -271,8 +288,8 @@ export function validateOrderForm(data: {
       type: 'ERROR',
       reason: `납기 희망일(${dateStr})이 현재 일자(${todayStr})보다 과거입니다.`,
       currentValue: dateStr,
-      suggestedValue: '2026-09-22',
-      suggestedActionName: '유효한 반입일(2026-09-22)로 변경'
+      suggestedValue: suggestedFromLead,
+      suggestedActionName: `유효한 반입일(${suggestedFromLead})로 변경`
     });
   } else if (dateStr === todayStr) {
     issues.push({
@@ -281,8 +298,8 @@ export function validateOrderForm(data: {
       type: 'WARNING',
       reason: '당일 반입은 초긴급(EMERGENCY) 배차 승인과 현장 타설/양중 크레인 우선 배정이 요구됩니다.',
       currentValue: dateStr,
-      suggestedValue: '2026-09-20',
-      suggestedActionName: '안전 납기 버퍼 적용(2026-09-20)'
+      suggestedValue: suggestedFromBuffer,
+      suggestedActionName: `안전 납기 버퍼 적용(${suggestedFromBuffer})`
     });
   } else {
     passedFields.push('requestedDeliveryDate');
