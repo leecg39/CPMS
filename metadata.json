@@ -1,0 +1,6 @@
+{
+  "name": "건설 조달 관리 시스템",
+  "description": "건설 현장 관리자와 공급업체를 위한 전 공정 자재 조달, 견적, 배송, 송장, 결제 통합 관리 시스템 및 승인 발주서·전자세금계산서 PDF 다운로드/인쇄 지원",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
