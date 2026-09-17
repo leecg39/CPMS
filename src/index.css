@@ -1,6 +1,319 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+ * Apple — Style Reference ("white room with a single blue switch")
+ * Theme: light · Frost canvas · one blue action · hairlines, no elevation
+ * ------------------------------------------------------------------ */
+@theme {
+  /* Brand colors */
+  --color-apple-blue: #0071e3;
+  --color-link-blue: #0066cc;
+  --color-signal-blue: #2997ff;
+  --color-carbon: #1d1d1f;
+  --color-frost: #f5f5f7;
+  --color-ice: #f4f8fb;
+  --color-smoke: #333333;
+  --color-graphite: #474747;
+  --color-ash: #707070;
+  --color-mist: #858585;
+  --color-onyx: #000000;
+  --color-pebble: #e2e2e5;
+  --color-hairline: #d2d2d7;
+
+  /* Font families — SF Pro on Apple platforms, Inter elsewhere, Pretendard for Hangul */
+  --font-sf-pro-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Pretendard", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-sf-pro-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Pretendard", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-sf-pro-text);
+  --font-display: var(--font-sf-pro-display);
+
+  /* Type scale */
+  --text-caption: 12px;
+  --text-caption--line-height: 1.33;
+  --text-caption--letter-spacing: -0.264px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.29;
+  --text-body-sm--letter-spacing: -0.224px;
+  --text-body: 17px;
+  --text-body--line-height: 1.47;
+  --text-body--letter-spacing: -0.272px;
+  --text-subheading: 21px;
+  --text-subheading--line-height: 1.24;
+  --text-subheading--letter-spacing: -0.105px;
+  --text-heading-sm: 28px;
+  --text-heading-sm--line-height: 1.18;
+  --text-heading-sm--letter-spacing: 0.196px;
+  --text-heading: 40px;
+  --text-heading--line-height: 1.14;
+  --text-heading--letter-spacing: 0.44px;
+  --text-heading-lg: 44px;
+  --text-heading-lg--line-height: 1.18;
+  --text-heading-lg--letter-spacing: -0.44px;
+  --text-display: 56px;
+  --text-display--line-height: 1.07;
+  --text-display--letter-spacing: 0.616px;
+
+  /* Remap default Tailwind sizes onto the Apple scale */
+  --text-xs: 12px;
+  --text-xs--line-height: 1.33;
+  --text-xs--letter-spacing: -0.264px;
+  --text-sm: 14px;
+  --text-sm--line-height: 1.29;
+  --text-sm--letter-spacing: -0.224px;
+  --text-base: 17px;
+  --text-base--line-height: 1.47;
+  --text-base--letter-spacing: -0.272px;
+  --text-lg: 21px;
+  --text-lg--line-height: 1.24;
+  --text-lg--letter-spacing: -0.105px;
+  --text-xl: 21px;
+  --text-xl--line-height: 1.24;
+  --text-xl--letter-spacing: -0.105px;
+  --text-2xl: 28px;
+  --text-2xl--line-height: 1.18;
+  --text-2xl--letter-spacing: 0.196px;
+  --text-3xl: 40px;
+  --text-3xl--line-height: 1.14;
+  --text-3xl--letter-spacing: 0.44px;
+  --text-4xl: 56px;
+  --text-4xl--line-height: 1.07;
+  --text-4xl--letter-spacing: 0.616px;
+
+  /* Weights — 300 subheads · 400 body · 600 nav/buttons/headlines (max) · 700 editorial only */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 600;
+  --font-weight-extrabold: 600;
+  --font-weight-black: 700;
+
+  /* Spacing */
+  --spacing-unit: 4px;
+
+  /* Border radius — only two values: 8px (cards/images/inputs) and 980px (buttons/tags) */
+  --radius-xs: 8px;
+  --radius-sm: 8px;
+  --radius: 8px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-lg-2: 11px;
+  --radius-xl: 8px;
+  --radius-2xl: 8px;
+  --radius-3xl: 8px;
+  --radius-4xl: 8px;
+  --radius-full: 980px;
+  --radius-full-2: 999px;
+
+  --radius-tags: 980px;
+  --radius-cards: 8px;
+  --radius-images: 8px;
+  --radius-inputs: 8px;
+  --radius-buttons: 980px;
+
+  /* Elevation — none on cards/buttons/nav. Only product imagery may carry --shadow-xl. */
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 0 #0000;
+  --shadow-xl: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+  --shadow-2xl: 0 0 #0000;
+
+  /* Surfaces */
+  --surface-canvas: #f5f5f7;
+  --surface-elevated-wash: #f4f8fb;
+  --surface-pebble: #e2e2e5;
+
+  /* Layout */
+  --page-max-width: 1440px;
+  --section-gap: 64px;
+  --card-padding: 24px;
+  --element-gap: 12px;
+
+  /* ----------------------------------------------------------------
+   * Palette remap: existing utility classes → Apple neutrals
+   * slate  → Apple gray ramp (Frost → Carbon)
+   * blue   → Link Blue for text/borders; Apple Blue fills via .btn-primary
+   * indigo → cool graphite ramp (secondary role tint, never a third blue)
+   * ---------------------------------------------------------------- */
+  --color-slate-50: #f5f5f7;
+  --color-slate-100: #e8e8ed;
+  --color-slate-200: #d2d2d7;
+  --color-slate-300: #b8b8bd;
+  --color-slate-400: #858585;
+  --color-slate-500: #707070;
+  --color-slate-600: #474747;
+  --color-slate-700: #333333;
+  --color-slate-800: #2a2a2c;
+  --color-slate-900: #1d1d1f;
+  --color-slate-950: #000000;
+
+  --color-blue-50: #f4f8fb;
+  --color-blue-100: #e3effb;
+  --color-blue-200: #c8dff7;
+  --color-blue-300: #8ec0f2;
+  --color-blue-400: #2997ff;
+  --color-blue-500: #0071e3;
+  --color-blue-600: #0066cc;
+  --color-blue-700: #0055aa;
+  --color-blue-800: #004488;
+  --color-blue-900: #003366;
+  --color-blue-950: #1d1d1f;
+
+  --color-indigo-50: #f4f8fb;
+  --color-indigo-100: #e8eef5;
+  --color-indigo-200: #d2dbe5;
+  --color-indigo-300: #aab8c9;
+  --color-indigo-400: #7f8fa3;
+  --color-indigo-500: #5b6b7f;
+  --color-indigo-600: #474747;
+  --color-indigo-700: #333333;
+  --color-indigo-800: #2a2a2c;
+  --color-indigo-900: #1d1d1f;
+  --color-indigo-950: #1d1d1f;
+}
+
+/* ------------------------------------------------------------------
+ * Base
+ * ------------------------------------------------------------------ */
+@layer base {
+  html {
+    background: var(--color-frost);
+    color-scheme: light;
+  }
+  body {
+    background: var(--color-frost);
+    color: var(--color-carbon);
+    font-family: var(--font-sf-pro-text);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.016em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "numr" 0;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-sf-pro-display);
+  }
+  ::selection {
+    background: #b3d7ff;
+    color: var(--color-carbon);
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--color-mist);
+  }
+  input, textarea, select {
+    font-family: inherit;
+  }
+  input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid var(--color-apple-blue);
+    outline-offset: 1px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+  }
+}
+
+/* ------------------------------------------------------------------
+ * Apple component primitives
+ * ------------------------------------------------------------------ */
+
+/* Filled Pill Button — the single filled interactive element */
+@utility btn-primary {
+  background: var(--color-apple-blue);
+  color: var(--color-ice);
+  border: 1px solid transparent;
+  border-radius: 980px;
+  padding: 11px 15px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.18;
+  letter-spacing: -0.016em;
+  transition: background-color 150ms ease;
+  &:hover { background: #0077ed; }
+  &:disabled { background: var(--color-pebble); color: var(--color-mist); cursor: not-allowed; }
+}
+
+/* Outlined Pill Button — secondary, paired with a filled primary */
+@utility btn-outline {
+  background: transparent;
+  color: var(--color-link-blue);
+  border: 1px solid var(--color-link-blue);
+  border-radius: 980px;
+  padding: 11px 15px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.18;
+  letter-spacing: -0.016em;
+  transition: background-color 150ms ease, color 150ms ease;
+  &:hover { background: var(--color-link-blue); color: var(--color-ice); }
+}
+
+/* Compact variants for dense UI */
+@utility btn-sm {
+  padding: 8px 15px;
+  font-size: 14px;
+}
+@utility btn-xs {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* Pebble Pill — neutral tertiary button / segmented control track */
+@utility btn-pebble {
+  background: var(--color-pebble);
+  color: var(--color-carbon);
+  border: 1px solid transparent;
+  border-radius: 980px;
+  font-weight: 400;
+  transition: background-color 150ms ease;
+  &:hover { background: #d6d6db; }
+}
+
+/* Ghost Link — underline on hover only */
+@utility link {
+  color: var(--color-link-blue);
+  background: transparent;
+  border: 0;
+  font-weight: 400;
+  &:hover { text-decoration: underline; }
+}
+
+/* Hairline rule */
+@utility hairline {
+  border-color: var(--color-hairline);
+}
+
+/* White surface with hairline (used where data density requires containment) */
+@utility surface {
+  background: #ffffff;
+  border: 1px solid var(--color-hairline);
+  border-radius: 8px;
+}
+
+/* Italic product-variant accent (e.g. "iPad air") */
+@utility text-variant {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-signal-blue);
+}
+
+/* Tight display tracking helpers */
+@utility tracking-display { letter-spacing: 0.616px; }
+@utility tracking-heading { letter-spacing: 0.44px; }
+@utility tracking-text { letter-spacing: -0.016em; }
+
+/* ------------------------------------------------------------------
+ * Print
+ * ------------------------------------------------------------------ */
 @media print {
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
   body * {
     visibility: hidden !important;
   }

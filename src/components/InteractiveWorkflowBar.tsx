@@ -89,65 +89,61 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
   ];
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs mb-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 mb-3 border-b border-slate-100 gap-2">
-        <div>
-          <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-            건설 조달 표준 7단계 업무 라이프사이클 파이프라인
-          </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
-            각 단계를 클릭하여 해당 공정의 공식 한글 표준 운영 매뉴얼(SOP)을 즉시 열람할 수 있습니다.
-          </p>
-        </div>
+    <section className="text-carbon">
+      <div className="text-center max-w-[720px] mx-auto mb-10">
+        <h2 className="font-display text-heading-sm sm:text-heading font-semibold text-carbon tracking-heading">
+          7단계 조달 라이프사이클
+        </h2>
+        <p className="text-subheading font-light text-carbon mt-2">
+          각 단계를 선택하면 공식 한글 표준 운영 매뉴얼(SOP)이 열립니다.
+        </p>
         <button
           onClick={() => onSelectManual('man-01')}
-          className="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 bg-blue-50 px-2.5 py-1 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer"
+          className="link text-body inline-flex items-center gap-1 mt-3 cursor-pointer"
         >
-          <BookOpen className="w-3.5 h-3.5" />
           <span>전체 프로세스 개요 매뉴얼</span>
+          <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
+      {/* Typographic step row — hairline dividers, no card containers */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 border-t hairline lg:divide-x divide-hairline">
         {steps.map((step, idx) => {
           const Icon = step.icon;
           return (
             <div
               key={step.id}
-              className="group relative bg-slate-50 hover:bg-slate-100/90 border border-slate-200/80 rounded-xl p-2.5 transition-all flex flex-col justify-between"
+              className="group flex flex-col justify-between pt-5 pb-6 px-4 border-b hairline lg:border-b-0"
             >
               <div>
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    STEP 0{idx + 1}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-caption text-ash">
+                    {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <span className="text-[9px] px-1.5 py-0.2 rounded font-medium bg-slate-200/80 text-slate-700">
+                  <span className="text-caption px-2.5 py-0.5 rounded-full bg-pebble text-carbon">
                     {step.role}
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 mb-1">
-                  <div className="p-1 rounded-md bg-white text-slate-700 shadow-2xs group-hover:scale-105 transition-transform">
-                    <Icon className="w-3.5 h-3.5 text-blue-600" />
-                  </div>
-                  <span className="text-xs font-bold text-slate-900">{step.title}</span>
+                <Icon className="w-5 h-5 text-carbon mb-2.5" strokeWidth={1.5} />
+                <div className="text-body font-semibold text-carbon leading-snug mb-1">
+                  {step.title.replace(/^\d+\.\s*/, '')}
                 </div>
-                <p className="text-[11px] text-slate-500 leading-tight line-clamp-2">
+                <p className="text-body-sm text-ash leading-snug">
                   {step.desc}
                 </p>
               </div>
 
               <button
                 onClick={() => onSelectManual(step.manualId)}
-                className="mt-2 text-[10px] font-semibold text-blue-600 hover:text-blue-800 flex items-center justify-between pt-1.5 border-t border-slate-200/60 transition-colors cursor-pointer"
+                className="link text-body-sm mt-4 inline-flex items-center gap-0.5 self-start cursor-pointer"
               >
                 <span>매뉴얼 보기</span>
-                <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </div>
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };

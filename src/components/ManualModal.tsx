@@ -60,13 +60,13 @@ export const ManualModal: React.FC<ManualModalProps> = ({
             <button
               onClick={handlePrint}
               title="매뉴얼 인쇄"
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 text-slate-400 hover:text-white rounded-full hover:bg-slate-800 transition-colors cursor-pointer"
             >
               <Printer className="w-4 h-4" />
             </button>
             <button
               onClick={onClose}
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 text-slate-400 hover:text-white rounded-full hover:bg-slate-800 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -254,7 +254,7 @@ export const ManualModal: React.FC<ManualModalProps> = ({
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-colors cursor-pointer"
+            className="px-4 py-2 btn-primary btn-sm text-xs font-bold rounded-full transition-colors cursor-pointer"
           >
             확인 및 닫기
           </button>

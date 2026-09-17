@@ -113,9 +113,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none w-full sm:w-auto">
           <button
             onClick={() => setActiveSubTab('dashboard')}
-            className={`px-3.5 py-2 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'dashboard'
-                ? 'bg-blue-600 text-white shadow-xs'
+                ? 'bg-apple-blue text-ice'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -125,9 +125,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
           <button
             onClick={() => setActiveSubTab('analytics')}
-            className={`px-3.5 py-2 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'analytics'
-                ? 'bg-blue-600 text-white shadow-xs'
+                ? 'bg-apple-blue text-ice'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -137,9 +137,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
           <button
             onClick={() => setActiveSubTab('orders')}
-            className={`px-3.5 py-2 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'orders'
-                ? 'bg-blue-600 text-white shadow-xs'
+                ? 'bg-apple-blue text-ice'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -149,9 +149,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
           <button
             onClick={() => setActiveSubTab('deliveries')}
-            className={`px-3.5 py-2 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'deliveries'
-                ? 'bg-blue-600 text-white shadow-xs'
+                ? 'bg-apple-blue text-ice'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -161,9 +161,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
           <button
             onClick={() => setActiveSubTab('payments')}
-            className={`px-3.5 py-2 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'payments'
-                ? 'bg-blue-600 text-white shadow-xs'
+                ? 'bg-apple-blue text-ice'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -190,7 +190,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
           <button
             onClick={onOpenNewOrderModal}
-            className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
+            className="px-3.5 py-1.5 btn-primary btn-sm text-xs font-bold rounded-full shadow-xs transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>신규 발주 신청</span>
@@ -257,32 +257,32 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
           </div>
 
           {/* Efficiency Analytics Quick Banner */}
-          <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 text-white p-5 rounded-2xl shadow-xs border border-blue-900/40 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          <div className="bg-white text-carbon p-5 rounded-lg border border-slate-200 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center shrink-0">
-                <TrendingUp className="w-6 h-6 text-blue-300" />
+              <div className="w-12 h-12 rounded-lg border border-slate-200 flex items-center justify-center shrink-0">
+                <TrendingUp className="w-6 h-6 text-carbon" />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-xs font-bold text-blue-300 flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+                  <span className="text-xs font-medium text-ash flex items-center gap-1">
+                    <Sparkles className="w-3.5 h-3.5" />
                     조달 효율성 빅데이터 분석
                   </span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  <span className="text-[11px] px-2 py-0.5 rounded-full font-medium bg-pebble text-carbon">
                     종합 효율성 95.2점 (S등급)
                   </span>
                 </div>
-                <h4 className="text-sm font-bold text-white">
+                <h4 className="text-sm font-medium text-carbon">
                   현장별 발주·납품·결제 3대 축 조달 효율성 및 공급망 성과 분석
                 </h4>
-                <p className="text-xs text-slate-300 mt-0.5">
+                <p className="text-xs text-ash mt-0.5">
                   5개 건설 현장과 5개 주요 협력 공급사 간 적기 납품률(96.5%), 품질 합격률(100%), 자금 결제 집행률 비교 차트를 제공합니다.
                 </p>
               </div>
             </div>
             <button
               onClick={() => setActiveSubTab('analytics')}
-              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
+              className="btn-outline btn-sm text-xs flex items-center gap-1.5 cursor-pointer shrink-0"
             >
               <span>조달 효율성 차트 분석 대시보드 열기</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -290,9 +290,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
           </div>
 
           {/* Quick Notice Callout for Site Manager Manuals */}
-          <div className="bg-blue-50/70 border border-blue-200 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="bg-white border border-slate-200 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-blue-600 text-white shrink-0">
+              <div className="p-2 rounded-lg bg-carbon text-frost shrink-0">
                 <HelpCircle className="w-5 h-5" />
               </div>
               <div>
@@ -307,13 +307,13 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             <div className="flex items-center gap-1.5 shrink-0">
               <button
                 onClick={() => onOpenManual('man-02')}
-                className="px-2.5 py-1 text-[11px] font-bold bg-white text-blue-700 hover:bg-blue-100 rounded-lg border border-blue-200 transition-colors cursor-pointer"
+                className="px-2.5 py-1 text-[11px] font-bold bg-white text-blue-700 hover:bg-blue-100 rounded-full border border-blue-200 transition-colors cursor-pointer"
               >
                 발주 매뉴얼
               </button>
               <button
                 onClick={() => onOpenManual('man-04')}
-                className="px-2.5 py-1 text-[11px] font-bold bg-white text-blue-700 hover:bg-blue-100 rounded-lg border border-blue-200 transition-colors cursor-pointer"
+                className="px-2.5 py-1 text-[11px] font-bold bg-white text-blue-700 hover:bg-blue-100 rounded-full border border-blue-200 transition-colors cursor-pointer"
               >
                 검수 매뉴얼
               </button>
@@ -321,7 +321,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
           </div>
 
           {/* Recent Deliveries Requiring Inspection */}
-          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs">
+          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
@@ -375,7 +375,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                     ) : (
                       <button
                         onClick={() => onOpenInspectionModal(del)}
-                        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-xs transition-all cursor-pointer flex items-center gap-1.5"
+                        className="px-4 py-2 btn-primary btn-sm text-xs font-bold rounded-full shadow-xs transition-all cursor-pointer flex items-center gap-1.5"
                       >
                         <ClipboardCheck className="w-4 h-4" />
                         <span>현장 실물 검수 및 서명</span>
@@ -405,24 +405,24 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
       {activeSubTab === 'orders' && (
         <div className="space-y-4">
           {/* Order Validation Pipeline Banner */}
-          <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 rounded-2xl p-4 text-white shadow-xs border border-blue-800/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="bg-white rounded-lg p-4 text-carbon border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-blue-300" />
+              <div className="w-10 h-10 rounded-lg border border-slate-200 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-5 h-5 text-carbon" />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-[11px] font-bold text-blue-300">
+                  <span className="text-[11px] font-medium text-ash">
                     발주신청서 양식 자동 체크 및 정밀 검증
                   </span>
-                  <span className="text-[9px] px-1.5 py-0.2 rounded font-mono font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  <span className="text-[11px] px-2 py-0.5 rounded-full font-medium bg-pebble text-carbon">
                     4단계 순서 검증
                   </span>
                 </div>
-                <h4 className="text-xs font-bold text-white">
+                <h4 className="text-xs font-medium text-carbon">
                   누락·모호한 표현·단위 오류 자동 체크 ➔ 스마트 수정 ➔ 사전 검수 ➔ 발주요청
                 </h4>
-                <p className="text-[11px] text-slate-300">
+                <p className="text-[11px] text-ash">
                   6대 핵심 항목(품목 ID, 수량, 단위, 희망일, 배송 위치, 규격)을 검증하여 발주 반려를 사전에 차단합니다.
                 </p>
               </div>
@@ -430,7 +430,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
             <button
               onClick={onOpenNewOrderModal}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs shadow-xs transition-all flex items-center gap-1.5 shrink-0 cursor-pointer"
+              className="btn-outline btn-sm text-xs flex items-center gap-1.5 shrink-0 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>발주신청서 양식 체크 및 등록</span>
@@ -439,8 +439,8 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-bold text-slate-900">전체 자재 발주(Order) 현황 목록</h3>
-              <p className="text-xs text-slate-500">공종별 소요 자재 발주 내역 및 공급사 견적 채택 현황</p>
+              <h3 className="text-subheading font-semibold text-carbon">전체 자재 발주(Order) 현황 목록</h3>
+              <p className="text-body-sm text-ash">공종별 소요 자재 발주 내역 및 공급사 견적 채택 현황</p>
             </div>
             <button
               onClick={() => onOpenManual('man-02')}
@@ -451,7 +451,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             </button>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-slate-600">
                 <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider text-[11px]">
@@ -512,7 +512,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                             {order.status === 'QUOTED' && relatedQuotations.length > 0 && (
                               <button
                                 onClick={() => onApproveQuotation(relatedQuotations[0].id, order.id)}
-                                className="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-bold text-[11px] transition-all cursor-pointer shadow-xs"
+                                className="px-2.5 py-1 btn-primary btn-sm rounded-full font-bold text-[11px] transition-all cursor-pointer shadow-xs"
                                 title="공급사 제안 견적 채택 및 발주 승인"
                               >
                                 견적 채택 승인
@@ -522,7 +522,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                             {['APPROVED', 'IN_DELIVERY', 'DELIVERED', 'COMPLETED'].includes(order.status) && (
                               <button
                                 onClick={() => onViewOrderPdf?.(order)}
-                                className="px-2 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg font-bold text-[11px] transition-all cursor-pointer flex items-center gap-1 shadow-2xs"
+                                className="px-2 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-full font-bold text-[11px] transition-all cursor-pointer flex items-center gap-1 shadow-2xs"
                                 title="승인된 전자 발주서 PDF 다운로드 및 인쇄"
                               >
                                 <FileText className="w-3.5 h-3.5 text-blue-600" />
@@ -554,8 +554,8 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-bold text-slate-900">현장 자재 입고 및 품질 검수(Inspection) 대장</h3>
-              <p className="text-xs text-slate-500">배송 도착 차량 확인, 실물 수량 계측, 시험성적서 대조 및 전자 인수증 서명</p>
+              <h3 className="text-subheading font-semibold text-carbon">현장 자재 입고 및 품질 검수(Inspection) 대장</h3>
+              <p className="text-body-sm text-ash">배송 도착 차량 확인, 실물 수량 계측, 시험성적서 대조 및 전자 인수증 서명</p>
             </div>
             <button
               onClick={() => onOpenManual('man-04')}
@@ -570,7 +570,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             {deliveries.map((del) => (
               <div
                 key={del.id}
-                className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all"
+                className="bg-white rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -622,7 +622,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                   ) : (
                     <button
                       onClick={() => onOpenInspectionModal(del)}
-                      className="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                      className="w-full py-2 btn-primary btn-sm text-xs font-bold rounded-full shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1.5"
                     >
                       <ClipboardCheck className="w-4 h-4" />
                       <span>품질 검수 및 전자 인수 서명</span>
@@ -640,8 +640,8 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-sm font-bold text-slate-900">공급업체 청구 송장 및 대금 지급 승인</h3>
-              <p className="text-xs text-slate-500">검수 완료 자재에 대한 전자세금계산서 검토 및 법인 계좌이체/어음 결제 집행</p>
+              <h3 className="text-subheading font-semibold text-carbon">공급업체 청구 송장 및 대금 지급 승인</h3>
+              <p className="text-body-sm text-ash">검수 완료 자재에 대한 전자세금계산서 검토 및 법인 계좌이체/어음 결제 집행</p>
             </div>
             <button
               onClick={() => onOpenManual('man-05')}
@@ -656,7 +656,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             {invoices.map((inv) => (
               <div
                 key={inv.id}
-                className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-4"
+                className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-col justify-between space-y-4"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -700,7 +700,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                 <div className="space-y-2 pt-2 border-t border-slate-100">
                   <button
                     onClick={() => onViewInvoicePdf?.(inv)}
-                    className="w-full py-2 bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-200 text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-2xs"
+                    className="w-full py-2 bg-purple-50 hover:bg-purple-100 text-purple-800 border border-purple-200 text-xs font-bold rounded-full transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-2xs"
                     title="국세청 표준 전자세금계산서 PDF 다운로드 및 인쇄"
                   >
                     <Receipt className="w-3.5 h-3.5 text-purple-600" />
@@ -715,7 +715,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                   ) : (
                     <button
                       onClick={() => onApprovePayment(inv.id)}
-                      className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                      className="w-full py-2.5 btn-primary btn-sm text-xs font-bold rounded-full shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5"
                     >
                       <CreditCard className="w-4 h-4" />
                       <span>대금 결제 승인 및 송금 완료 처리</span>

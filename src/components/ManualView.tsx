@@ -72,38 +72,34 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
   return (
     <div className="space-y-6">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-semibold mb-3">
+      <div className="text-carbon py-8 text-center border-b hairline">
+        <div className="max-w-[720px] mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pebble text-carbon text-caption mb-4">
             <BookOpen className="w-3.5 h-3.5" />
             <span>공식 한글 표준 매뉴얼 패치 허브</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white mb-2">
-            건설 산업 조달 관리 시스템 전체 매뉴얼
+          <h1 className="font-display text-heading-sm sm:text-heading font-semibold tracking-heading text-carbon mb-2">
+            매뉴얼 <span className="text-variant text-[0.7em]">hub</span>
           </h1>
-          <p className="text-slate-300 text-sm leading-relaxed mb-4">
-            현장 발주서 작성부터 공급업체 단가 견적, 차량 배차 및 배송 출하, 현장 품질 검수, 전자세금계산서 청구, 대금 결제 집행까지 건설 자재 조달의 모든 업무 절차와 표준 규격(API 포함)을 한글로 제공합니다.
+          <p className="text-subheading font-light text-carbon leading-snug mb-6">
+            발주서 작성부터 대금 결제까지, 모든 업무 절차와 표준 규격(API 포함)을 한글로.
           </p>
-          <div className="flex flex-wrap gap-2 pt-1">
+          <div className="flex flex-wrap justify-center gap-3">
             <button
               onClick={() => onSelectManual('man-01')}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-blue-600/30 cursor-pointer flex items-center gap-1.5"
+              className="btn-primary cursor-pointer flex items-center gap-1.5"
             >
-              <BookOpen className="w-4 h-4" />
-              <span>전체 프로세스 7단계 가이드 열기</span>
+              <span>7단계 가이드 열기</span>
             </button>
             <button
               onClick={handleDownloadManualDoc}
-              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-bold transition-all border border-slate-700 cursor-pointer flex items-center gap-1.5"
+              className="btn-outline cursor-pointer flex items-center gap-1.5"
             >
               <Download className="w-4 h-4" />
-              <span>전체 매뉴얼 텍스트 파일 저장</span>
+              <span>텍스트 파일 저장</span>
             </button>
           </div>
         </div>
-
-        {/* Decorative background grid pattern */}
-        <div className="absolute right-0 top-0 bottom-0 w-96 opacity-10 pointer-events-none bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
       </div>
 
       {/* Category Pills & Search */}
@@ -113,9 +109,9 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-3 py-1.5 text-xs font-bold rounded-xl whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-3 py-1.5 text-xs font-bold rounded-full whitespace-nowrap transition-all cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-blue-600 text-white shadow-xs'
+                  ? 'bg-apple-blue text-ice'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
@@ -141,10 +137,10 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
         {/* Left Column: Manual Section Cards */}
         <div className="lg:col-span-5 space-y-3">
           <div className="flex items-center justify-between px-1">
-            <span className="text-xs font-bold text-slate-700">
+            <span className="text-body-sm text-carbon">
               검색된 매뉴얼: <span className="text-blue-600">{filteredManuals.length}</span>건
             </span>
-            <span className="text-[11px] text-slate-400">
+            <span className="text-caption text-ash">
               클릭 시 우측에서 상세 내용 열람
             </span>
           </div>
@@ -156,10 +152,10 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
                 <div
                   key={manual.id}
                   onClick={() => setActiveManualId(manual.id)}
-                  className={`p-4 rounded-2xl border transition-all cursor-pointer text-left ${
+                  className={`p-4 rounded-lg border transition-all cursor-pointer text-left ${
                     isActive
-                      ? 'bg-blue-50/90 border-blue-500 shadow-sm ring-1 ring-blue-500'
-                      : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-xs'
+                      ? 'bg-white border-apple-blue ring-1 ring-apple-blue'
+                      : 'bg-white border-slate-200 hover:border-slate-300'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2 mb-1.5">
@@ -197,7 +193,7 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
             })}
 
             {filteredManuals.length === 0 && (
-              <div className="bg-white border border-slate-200 rounded-2xl p-8 text-center text-slate-500 text-xs">
+              <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center text-slate-500 text-xs">
                 일치하는 매뉴얼을 찾을 수 없습니다. 검색어를 변경해 보세요.
               </div>
             )}
@@ -220,7 +216,7 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
                 </div>
                 <button
                   onClick={() => onSelectManual(currentManual.id)}
-                  className="text-xs font-bold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-xl transition-colors cursor-pointer flex items-center gap-1.5"
+                  className="text-xs font-bold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-colors cursor-pointer flex items-center gap-1.5"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>전체화면 팝업 열람</span>
@@ -233,7 +229,7 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
             </div>
 
             {/* Summary */}
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
+            <div className="bg-slate-50 p-4 rounded-2xl/80">
               <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">
                 개요 및 목적
               </h4>
@@ -340,7 +336,7 @@ ${MANUAL_SECTIONS.map((m, i) => `${i + 1}. [${m.code}] ${m.title} (${m.badge})\n
                 </h4>
                 <div className="space-y-2.5">
                   {currentManual.faqs.map((faq, i) => (
-                    <div key={i} className="bg-slate-50 border border-slate-200 rounded-2xl p-3.5">
+                    <div key={i} className="bg-slate-50 rounded-2xl p-3.5">
                       <div className="text-xs font-bold text-slate-900 mb-1 flex items-start gap-2">
                         <span className="text-blue-600 font-bold">Q.</span>
                         <span>{faq.question}</span>

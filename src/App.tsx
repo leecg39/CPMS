@@ -277,12 +277,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white">
-      {/* Toast Notification */}
+    <div className="min-h-screen flex flex-col bg-frost text-carbon">
+      {/* Toast Notification — flat white surface with hairline, no elevation */}
       {toastMessage && (
-        <div className="fixed top-20 right-4 z-50 bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-slate-700 flex items-center gap-3 text-xs animate-in slide-in-from-top-4 duration-200">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-          <span className="font-medium">{toastMessage}</span>
+        <div className="fixed top-28 right-6 z-50 surface px-4 py-3 flex items-center gap-3 text-body-sm max-w-md animate-in slide-in-from-top-4 duration-200">
+          <CheckCircle2 className="w-4 h-4 text-apple-blue shrink-0" />
+          <span>{toastMessage}</span>
         </div>
       )}
 
@@ -298,7 +298,38 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 w-full flex flex-col">
+        {/* Product Hero — centered name, whisper tagline, filled + outlined pill pair */}
+        <section className="w-full bg-frost pt-16 pb-14 px-6 text-center">
+          <p className="text-caption text-ash mb-3">
+            {currentRole === 'SITE_MANAGER' ? '현장 관리자 워크스페이스' : '협력 공급업체 워크스페이스'}
+          </p>
+          <h1 className="font-display text-heading sm:text-display font-semibold text-carbon tracking-display">
+            CPMS <span className="text-variant text-[0.6em]">procure</span>
+          </h1>
+          <p className="mt-3 text-subheading sm:text-[26px] font-light text-carbon leading-snug">
+            발주부터 정산까지, 하나의 흐름으로.
+          </p>
+          <div className="mt-7 flex items-center justify-center gap-3 flex-wrap">
+            {currentRole === 'SITE_MANAGER' ? (
+              <button onClick={() => setIsNewOrderModalOpen(true)} className="btn-primary cursor-pointer">
+                신규 발주 신청
+              </button>
+            ) : (
+              <button
+                onClick={() => setActiveTab('supplier-dashboard')}
+                className="btn-primary cursor-pointer"
+              >
+                공급사 대시보드
+              </button>
+            )}
+            <button onClick={() => handleOpenManual('man-01')} className="btn-outline cursor-pointer">
+              전체 매뉴얼 보기
+            </button>
+          </div>
+        </section>
+
+        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-10 pb-24 flex flex-col gap-16">
         {/* Interactive 7-Phase Workflow Pipeline */}
         <InteractiveWorkflowBar onSelectManual={handleOpenManual} />
 
@@ -353,42 +384,53 @@ export default function App() {
             onViewInvoicePdf={(inv) => setSelectedInvoiceForPdf(inv)}
           />
         )}
+        </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-slate-200 py-6 text-xs text-slate-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <Building2 className="w-4 h-4 text-blue-600" />
-            <span className="font-bold text-slate-700">건설 산업 조달 관리 시스템 (CPMS)</span>
-            <span>•</span>
-            <span>모든 기능 및 매뉴얼 100% 한글 패치 완료</span>
+      {/* Footer — flat, typographic, hairline-divided */}
+      <footer className="bg-frost border-t hairline text-caption text-ash">
+        <div className="max-w-[980px] mx-auto px-6 py-10 flex flex-col gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div>
+              <div className="font-semibold text-carbon mb-2.5">시스템</div>
+              <ul className="space-y-2">
+                <li><button onClick={() => handleOpenManual('man-01')} className="hover:underline cursor-pointer">시스템 개요</button></li>
+                <li><button onClick={() => setActiveTab('analytics-dashboard')} className="hover:underline cursor-pointer">조달 효율성 차트</button></li>
+                <li><button onClick={() => setActiveTab('manual-hub')} className="hover:underline cursor-pointer">전체 한글 매뉴얼</button></li>
+              </ul>
+            </div>
+            <div>
+              <div className="font-semibold text-carbon mb-2.5">현장 관리자</div>
+              <ul className="space-y-2">
+                <li><button onClick={() => handleOpenManual('man-02')} className="hover:underline cursor-pointer">발주 신청</button></li>
+                <li><button onClick={() => handleOpenManual('man-03')} className="hover:underline cursor-pointer">발주 승인</button></li>
+                <li><button onClick={() => handleOpenManual('man-04')} className="hover:underline cursor-pointer">현장 검수</button></li>
+                <li><button onClick={() => handleOpenManual('man-05')} className="hover:underline cursor-pointer">대금 지급</button></li>
+              </ul>
+            </div>
+            <div>
+              <div className="font-semibold text-carbon mb-2.5">공급업체</div>
+              <ul className="space-y-2">
+                <li><button onClick={() => handleOpenManual('man-06')} className="hover:underline cursor-pointer">견적 제출</button></li>
+                <li><button onClick={() => handleOpenManual('man-07')} className="hover:underline cursor-pointer">출하·배송</button></li>
+                <li><button onClick={() => handleOpenManual('man-08')} className="hover:underline cursor-pointer">송장 발행</button></li>
+              </ul>
+            </div>
+            <div>
+              <div className="font-semibold text-carbon mb-2.5">지원</div>
+              <ul className="space-y-2">
+                <li><button onClick={() => handleOpenManual('man-10')} className="hover:underline cursor-pointer">조달 승인 규정</button></li>
+                <li><button onClick={() => handleOpenManual('man-12')} className="hover:underline cursor-pointer">개발자 API 명세</button></li>
+                <li><button onClick={() => handleOpenManual('man-11')} className="hover:underline cursor-pointer">FAQ / 트러블슈팅</button></li>
+              </ul>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => handleOpenManual('man-01')}
-              className="hover:text-blue-600 font-semibold transition-colors cursor-pointer"
-            >
-              시스템 개요
-            </button>
-            <button
-              onClick={() => handleOpenManual('man-10')}
-              className="hover:text-blue-600 font-semibold transition-colors cursor-pointer"
-            >
-              조달 승인 규정
-            </button>
-            <button
-              onClick={() => handleOpenManual('man-12')}
-              className="hover:text-blue-600 font-semibold transition-colors cursor-pointer"
-            >
-              개발자 API 명세
-            </button>
-            <button
-              onClick={() => handleOpenManual('man-11')}
-              className="hover:text-blue-600 font-semibold transition-colors cursor-pointer"
-            >
-              FAQ / 트러블슈팅
-            </button>
+          <div className="border-t hairline pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <Building2 className="w-3.5 h-3.5 text-ash" />
+              <span>건설 산업 조달 관리 시스템 (CPMS) v2.4</span>
+            </div>
+            <span>모든 기능 및 매뉴얼 100% 한글 패치 완료</span>
           </div>
         </div>
       </footer>

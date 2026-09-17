@@ -256,9 +256,9 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
             <div className="flex items-center bg-slate-800 p-1 rounded-xl border border-slate-700 text-xs">
               <button
                 onClick={() => setInvoiceType('RECEIVER')}
-                className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                className={`px-3 py-1 rounded-full font-bold transition-all cursor-pointer ${
                   invoiceType === 'RECEIVER'
-                    ? 'bg-blue-600 text-white shadow-xs'
+                    ? 'bg-apple-blue text-ice'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -266,7 +266,7 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
               </button>
               <button
                 onClick={() => setInvoiceType('SUPPLIER')}
-                className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                className={`px-3 py-1 rounded-full font-bold transition-all cursor-pointer ${
                   invoiceType === 'SUPPLIER'
                     ? 'bg-red-600 text-white shadow-xs'
                     : 'text-slate-400 hover:text-white'
@@ -300,7 +300,7 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
             {/* 인쇄하기 버튼 */}
             <button
               onClick={handlePrint}
-              className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold transition-all border border-slate-700 flex items-center gap-1.5 cursor-pointer"
+              className="px-3 py-2 btn-primary btn-sm rounded-full text-xs font-bold transition-all border border-slate-700 flex items-center gap-1.5 cursor-pointer"
               title="브라우저 인쇄 다이얼로그 호출"
             >
               <Printer className="w-4 h-4 text-slate-300" />
@@ -311,7 +311,7 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
             <button
               onClick={handleDownloadPdf}
               disabled={isGeneratingPdf}
-              className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+              className="px-4 py-2 btn-primary btn-sm rounded-full text-xs font-bold transition-all shadow-md flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
             >
               {isGeneratingPdf ? (
                 <>
@@ -329,7 +329,7 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
             {/* 닫기 */}
             <button
               onClick={onClose}
-              className="p-2 text-slate-400 hover:text-white rounded-xl hover:bg-slate-800 transition-colors cursor-pointer ml-1"
+              className="p-2 text-slate-400 hover:text-white rounded-full hover:bg-slate-800 transition-colors cursor-pointer ml-1"
             >
               <X className="w-5 h-5" />
             </button>
@@ -851,7 +851,7 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold transition-colors cursor-pointer"
+            className="px-4 py-1.5 btn-primary btn-sm rounded-full text-xs font-semibold transition-colors cursor-pointer"
           >
             닫기 (Esc)
           </button>

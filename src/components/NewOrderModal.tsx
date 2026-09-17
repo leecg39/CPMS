@@ -197,7 +197,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
             <button
               type="button"
               onClick={() => onOpenManual('man-02')}
-              className="text-xs text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1 bg-slate-800 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+              className="text-xs text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1 bg-slate-800 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer"
             >
               <HelpCircle className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">발주 매뉴얼(MAN-02)</span>
@@ -205,7 +205,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-1.5 text-slate-400 hover:text-white rounded-full hover:bg-slate-800 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -219,9 +219,9 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
             <button
               type="button"
               onClick={() => setCurrentStep('CHECK')}
-              className={`p-2 rounded-xl border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
+              className={`p-2 rounded-full border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
                 currentStep === 'CHECK'
-                  ? 'bg-blue-600 text-white border-blue-700 shadow-xs'
+                  ? 'bg-apple-blue text-ice border-apple-blue'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
@@ -238,9 +238,9 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
             <button
               type="button"
               onClick={() => setCurrentStep('MODIFY')}
-              className={`p-2 rounded-xl border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
+              className={`p-2 rounded-full border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
                 currentStep === 'MODIFY'
-                  ? 'bg-blue-600 text-white border-blue-700 shadow-xs'
+                  ? 'bg-apple-blue text-ice border-apple-blue'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
@@ -253,9 +253,9 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
             <button
               type="button"
               onClick={() => setCurrentStep('INSPECT')}
-              className={`p-2 rounded-xl border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
+              className={`p-2 rounded-full border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
                 currentStep === 'INSPECT'
-                  ? 'bg-blue-600 text-white border-blue-700 shadow-xs'
+                  ? 'bg-apple-blue text-ice border-apple-blue'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
@@ -276,7 +276,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                   setCurrentStep('INSPECT');
                 }
               }}
-              className={`p-2 rounded-xl border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
+              className={`p-2 rounded-full border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
                 currentStep === 'SUBMIT'
                   ? 'bg-emerald-600 text-white border-emerald-700 shadow-xs'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
@@ -298,7 +298,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                 key={p.id}
                 type="button"
                 onClick={() => handleSelectPresetMaterial(p)}
-                className="px-2 py-0.5 bg-white hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-md border border-slate-200 shrink-0 text-[11px] font-medium transition-colors cursor-pointer"
+                className="px-2 py-0.5 bg-white hover:bg-blue-50 hover:text-blue-700 text-slate-700 rounded-full border border-slate-200 shrink-0 text-[11px] font-medium transition-colors cursor-pointer"
               >
                 {p.name.split(' ')[0]} ({p.id})
               </button>
@@ -308,7 +308,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
           <button
             type="button"
             onClick={handleLoadFlawedSample}
-            className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-lg text-[11px] font-bold border border-amber-300 transition-colors flex items-center gap-1 shrink-0 cursor-pointer shadow-2xs"
+            className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-full text-[11px] font-bold border border-amber-300 transition-colors flex items-center gap-1 shrink-0 cursor-pointer shadow-2xs"
           >
             <span>🧪 모호한 표현/틀린 단위 테스트용 샘플 불러오기</span>
           </button>
@@ -355,7 +355,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setCurrentStep('MODIFY')}
-                      className="px-3.5 py-2 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer text-xs"
+                      className="px-3.5 py-2 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold rounded-full shadow-xs transition-all flex items-center gap-1.5 cursor-pointer text-xs"
                     >
                       <span>스마트 수정하기 (2단계)</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -364,7 +364,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setCurrentStep('INSPECT')}
-                      className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer text-xs"
+                      className="px-3.5 py-2 btn-primary btn-sm font-bold rounded-full shadow-xs transition-all flex items-center gap-1.5 cursor-pointer text-xs"
                     >
                       <span>사전 검수 진행 (3단계)</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -415,7 +415,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
               </div>
 
               {/* 6 Essential Fields with Dynamic Status Indicator */}
-              <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-4">
+              <div className="p-4 bg-slate-50 rounded-2xl space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                   <span className="font-bold text-slate-900 text-xs flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-blue-600" />
@@ -665,7 +665,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                 <button
                   type="button"
                   onClick={handleSmartAutoFixAll}
-                  className="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 shrink-0 cursor-pointer text-xs"
+                  className="px-4 py-2 btn-primary btn-sm font-bold rounded-full shadow-xs transition-all flex items-center gap-1.5 shrink-0 cursor-pointer text-xs"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>원클릭 일괄 자동 교정</span>
@@ -685,7 +685,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setCurrentStep('INSPECT')}
-                    className="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-xs transition-all inline-flex items-center gap-1.5 cursor-pointer text-xs"
+                    className="px-5 py-2 btn-primary btn-sm font-bold rounded-full shadow-xs transition-all inline-flex items-center gap-1.5 cursor-pointer text-xs"
                   >
                     <span>3단계 사전 검수로 이동하기</span>
                     <ArrowRight className="w-4 h-4" />
@@ -725,7 +725,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                       <button
                         type="button"
                         onClick={() => handleApplySingleCorrection(issue)}
-                        className="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-bold rounded-xl text-xs transition-colors flex items-center gap-1 shrink-0 cursor-pointer self-end sm:self-center"
+                        className="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-bold rounded-full text-xs transition-colors flex items-center gap-1 shrink-0 cursor-pointer self-end sm:self-center"
                       >
                         <Check className="w-3.5 h-3.5 text-blue-600" />
                         <span>{issue.suggestedActionName}</span>
@@ -875,7 +875,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
           {/* ================= STEP 4: 발주요청 확정 (SUBMIT) ================= */}
           {currentStep === 'SUBMIT' && (
             <div className="space-y-4 animate-in fade-in duration-150">
-              <div className="border border-slate-300 rounded-2xl p-5 bg-white shadow-xs space-y-4">
+              <div className="rounded-2xl border border-slate-200 p-5 bg-white shadow-xs space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-3">
                   <div>
                     <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">
@@ -964,7 +964,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                   else if (currentStep === 'INSPECT') setCurrentStep('MODIFY');
                   else if (currentStep === 'MODIFY') setCurrentStep('CHECK');
                 }}
-                className="px-3.5 py-2 text-slate-600 hover:text-slate-900 bg-white border border-slate-200 rounded-xl font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-3.5 py-2 text-slate-600 hover:text-slate-900 bg-white border border-slate-200 rounded-full font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>이전 단계</span>
@@ -976,7 +976,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-slate-600 hover:text-slate-800 bg-white hover:bg-slate-100 rounded-xl border border-slate-200 font-bold transition-colors cursor-pointer"
+              className="px-4 py-2 text-slate-600 hover:text-slate-800 bg-white hover:bg-slate-100 rounded-full border border-slate-200 font-bold transition-colors cursor-pointer"
             >
               닫기
             </button>
@@ -991,7 +991,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                     setCurrentStep('MODIFY');
                   }
                 }}
-                className="px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
+                className="px-5 py-2 btn-primary btn-sm font-bold rounded-full shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 <span>{report.isValid ? '사전 검수 진행 ➔' : '오류 및 모호한 표현 수정 ➔'}</span>
               </button>
@@ -1008,7 +1008,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                     setTimeout(() => setCurrentStep('INSPECT'), 200);
                   }
                 }}
-                className="px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
+                className="px-5 py-2 btn-primary btn-sm font-bold rounded-full shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 <span>{report.isValid ? '사전 검수 진행 (3단계) ➔' : '일괄 교정 후 사전 검수 ➔'}</span>
               </button>
@@ -1021,7 +1021,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
                 onClick={() => setCurrentStep('SUBMIT')}
                 className={`px-5 py-2 font-bold rounded-xl shadow-xs transition-all flex items-center gap-1.5 ${
                   isInspectionConfirmed
-                    ? 'bg-blue-600 hover:bg-blue-500 text-white cursor-pointer'
+                    ? 'btn-primary btn-sm cursor-pointer'
                     : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                 }`}
               >
@@ -1033,7 +1033,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
               <button
                 type="button"
                 onClick={handleFinalSubmit}
-                className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-md shadow-emerald-500/20 transition-all flex items-center gap-1.5 cursor-pointer text-xs"
+                className="px-6 py-2.5 btn-primary btn-sm font-bold rounded-full shadow-md shadow-emerald-500/20 transition-all flex items-center gap-1.5 cursor-pointer text-xs"
               >
                 <Send className="w-4 h-4" />
                 <span>발주신청서 전송 및 발주요청 완료</span>

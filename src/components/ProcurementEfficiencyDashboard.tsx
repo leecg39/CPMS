@@ -377,7 +377,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
           {onOpenManual && (
             <button
               onClick={() => onOpenManual('man-10')}
-              className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition-all flex items-center gap-1 cursor-pointer"
+              className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full text-xs font-bold transition-all flex items-center gap-1 cursor-pointer"
             >
               <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
               <span>조달 규정 가이드</span>
@@ -389,7 +389,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
       {/* 6 Essential KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5">
         {/* KPI 1: Comprehensive Efficiency Score */}
-        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-4 rounded-2xl shadow-xs flex flex-col justify-between sm:col-span-2 lg:col-span-2">
+        <div className="bg-carbon text-frost p-4 rounded-2xl shadow-xs flex flex-col justify-between sm:col-span-2 lg:col-span-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-blue-100 flex items-center gap-1">
               <Award className="w-4 h-4 text-amber-300" />

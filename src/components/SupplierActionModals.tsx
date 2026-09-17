@@ -63,7 +63,7 @@ export const NewQuotationModal: React.FC<NewQuotationModalProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={() => onOpenManual('man-06')}
-              className="text-xs text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1 bg-slate-800 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+              className="text-xs text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1 bg-slate-800 px-2.5 py-1.5 rounded-full transition-colors cursor-pointer"
             >
               <HelpCircle className="w-3.5 h-3.5" />
               <span>견적 매뉴얼(MAN-06)</span>
@@ -160,7 +160,7 @@ export const NewQuotationModal: React.FC<NewQuotationModalProps> = ({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-md cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 rounded-full shadow-md cursor-pointer flex items-center gap-1.5"
             >
               <Plus className="w-4 h-4" />
               <span>견적서 제출 완료</span>
@@ -298,7 +298,7 @@ export const NewDeliveryModal: React.FC<NewDeliveryModalProps> = ({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white bg-cyan-600 hover:bg-cyan-500 rounded-xl shadow-md cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2 text-xs font-bold text-white bg-cyan-600 hover:bg-cyan-500 rounded-full shadow-md cursor-pointer flex items-center gap-1.5"
             >
               <Truck className="w-4 h-4" />
               <span>배송 출하 등록 확정</span>
@@ -455,7 +455,7 @@ export const NewInvoiceModal: React.FC<NewInvoiceModalProps> = ({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-bold text-white bg-purple-600 hover:bg-purple-500 rounded-xl shadow-md cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2 text-xs font-bold text-white bg-purple-600 hover:bg-purple-500 rounded-full shadow-md cursor-pointer flex items-center gap-1.5"
             >
               <Receipt className="w-4 h-4" />
               <span>세금계산서 청구 발행</span>
