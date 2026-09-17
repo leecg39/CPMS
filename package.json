@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "test": "bun src/utils/orderValidation.test.ts && bun src/components/primarySubmitCtas.test.ts"
+    "test": "bun src/utils/orderValidation.test.ts && bun src/utils/liveDates.test.ts && bun src/components/primarySubmitCtas.test.ts && bun src/components/formDefaultDates.test.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

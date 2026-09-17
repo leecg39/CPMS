@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { OrderItem, QuotationItem, DeliveryItem, InvoiceItem } from '../types';
 import { X, Calculator, Truck, Receipt, HelpCircle, Check, Plus } from 'lucide-react';
+import {
+  defaultExpectedArrival,
+  defaultInvoiceDueDate,
+  defaultQuoteValidUntil,
+  toLocalDateTime,
+  toLocalIsoDate
+} from '../utils/liveDates';
 
 interface NewQuotationModalProps {
   order: OrderItem | null;
@@ -19,7 +26,7 @@ export const NewQuotationModal: React.FC<NewQuotationModalProps> = ({
 }) => {
   const [proposedUnitPrice, setProposedUnitPrice] = useState<number>(order?.unitPrice || 850000);
   const [leadTimeDays, setLeadTimeDays] = useState<number>(2);
-  const [validUntil, setValidUntil] = useState<string>('2026-09-28');
+  const [validUntil, setValidUntil] = useState<string>(defaultQuoteValidUntil);
   const [remarks, setRemarks] = useState<string>('KS 인증서 첨부, 당사 직영 차량 하역 지원, 파레트 래핑 무료');
   const [supplierName, setSupplierName] = useState<string>('동국제강(주) 수도권영업소');
 
@@ -190,7 +197,7 @@ export const NewDeliveryModal: React.FC<NewDeliveryModalProps> = ({
   const [vehicleNumber, setVehicleNumber] = useState('경기88바9922 (25톤 카고)');
   const [driverName, setDriverName] = useState('이진수');
   const [driverContact, setDriverContact] = useState('010-9283-4411');
-  const [expectedArrival, setExpectedArrival] = useState('2026-09-18 14:00');
+  const [expectedArrival, setExpectedArrival] = useState(defaultExpectedArrival);
 
   if (!isOpen || !order) return null;
 
@@ -208,7 +215,7 @@ export const NewDeliveryModal: React.FC<NewDeliveryModalProps> = ({
       driverName,
       driverContact,
       trackingStatus: 'SHIPPED',
-      dispatchedAt: new Date().toISOString().replace('T', ' ').slice(0, 16),
+      dispatchedAt: toLocalDateTime(new Date()),
       expectedArrival
     });
     onClose();
@@ -328,7 +335,7 @@ export const NewInvoiceModal: React.FC<NewInvoiceModalProps> = ({
   const [bankName, setBankName] = useState('신한은행');
   const [accountNumber, setAccountNumber] = useState('110-384-998821');
   const [accountHolder, setAccountHolder] = useState('동국제강(주)');
-  const [dueDate, setDueDate] = useState('2026-10-20');
+  const [dueDate, setDueDate] = useState(defaultInvoiceDueDate);
 
   if (!isOpen || !order) return null;
 
@@ -346,7 +353,7 @@ export const NewInvoiceModal: React.FC<NewInvoiceModalProps> = ({
       supplyAmount,
       taxAmount,
       totalAmount,
-      issueDate: new Date().toISOString().slice(0, 10),
+      issueDate: toLocalIsoDate(new Date()),
       dueDate,
       bankName,
       accountNumber,

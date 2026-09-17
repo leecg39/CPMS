@@ -7,6 +7,12 @@ import {
   ValidationReport,
   ValidationIssue
 } from '../utils/orderValidation';
+import {
+  defaultRequestedDeliveryDate,
+  draftOrderNumber,
+  flawedSampleDeliveryDate,
+  localDatePlusDays
+} from '../utils/liveDates';
 import { 
   X, 
   Plus, 
@@ -61,7 +67,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
   const [unitPrice, setUnitPrice] = useState<number>(94000);
   const [priority, setPriority] = useState<PriorityLevel>('NORMAL');
   const [deliveryAddress, setDeliveryAddress] = useState('서울 강남구 테헤란로 152 신축공사 현장 서문 2번 게이트 (지하 2층 코어부 타설장)');
-  const [requestedDeliveryDate, setRequestedDeliveryDate] = useState('2026-09-25');
+  const [requestedDeliveryDate, setRequestedDeliveryDate] = useState(defaultRequestedDeliveryDate);
   const [supplierName, setSupplierName] = useState('현대레미콘(주)');
   const [notes, setNotes] = useState('코어부 벽체 연속 타설용, 믹서트럭 15분 간격 순환 배차 필수');
 
@@ -95,7 +101,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
     setQuantity(0); // Invalid quantity
     setUnit('개'); // Wrong unit for concrete!
     setUnitPrice(95000);
-    setRequestedDeliveryDate('2026-08-01'); // Past date!
+    setRequestedDeliveryDate(flawedSampleDeliveryDate());
     setDeliveryAddress('현장 앞마당 알아서'); // Ambiguous address
     setSupplierName('현대레미콘(주)');
     setNotes('아무때나 빨리');
@@ -113,7 +119,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
     setQuantity(p.minQty * 2);
     setUnitPrice(p.defaultPrice);
     setDeliveryAddress(getStandardAddressForSite(siteName));
-    setRequestedDeliveryDate('2026-09-24');
+    setRequestedDeliveryDate(localDatePlusDays(Math.max(p.leadTimeDays, 1)));
   };
 
   // Apply single correction
@@ -888,7 +894,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
 
                   <div className="text-right">
                     <span className="text-[10px] font-bold text-slate-400 block">발주 관리번호 (임시)</span>
-                    <span className="text-xs font-mono font-black text-blue-600">ORD-2026-NEW</span>
+                    <span className="text-xs font-mono font-black text-blue-600">{draftOrderNumber()}</span>
                   </div>
                 </div>
 

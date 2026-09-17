@@ -1,3 +1,5 @@
+import { addLocalDays, toLocalIsoDate } from './liveDates';
+
 // Order Form Auto-Validation & Correction Engine
 
 export interface MaterialStandard {
@@ -138,17 +140,6 @@ export interface ValidationReport {
   score: number; // 0 to 100
   issues: ValidationIssue[];
   passedFields: string[];
-}
-
-function toLocalIsoDate(date: Date): string {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-}
-
-function addLocalDays(date: Date, days: number): Date {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate() + days);
 }
 
 const SAME_DAY_BUFFER_DAYS = 3;

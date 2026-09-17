@@ -17,6 +17,7 @@ import {
   INITIAL_PAYMENTS 
 } from './data/initialData';
 import { MANUAL_SECTIONS } from './data/manualData';
+import { documentNumber, toLocalDateTime } from './utils/liveDates';
 
 import { Header } from './components/Header';
 import { InteractiveWorkflowBar } from './components/InteractiveWorkflowBar';
@@ -96,13 +97,13 @@ export default function App() {
     newOrderData: Omit<OrderItem, 'id' | 'orderNumber' | 'createdAt' | 'status'>
   ) => {
     const nextIdNumber = orders.length + 1;
-    const orderNumber = `ORD-2026-${String(nextIdNumber).padStart(3, '0')}`;
+    const orderNumber = documentNumber('ORD', nextIdNumber, 3);
     const newOrder: OrderItem = {
       ...newOrderData,
       id: `ord-${Date.now()}`,
       orderNumber,
       status: 'PENDING',
-      createdAt: new Date().toISOString().replace('T', ' ').slice(0, 16)
+      createdAt: toLocalDateTime(new Date())
     };
 
     setOrders([newOrder, ...orders]);
@@ -114,13 +115,13 @@ export default function App() {
     newQuotationData: Omit<QuotationItem, 'id' | 'quotationNumber' | 'submittedAt' | 'status'>
   ) => {
     const nextIdNumber = quotations.length + 80;
-    const quotationNumber = `QT-2026-${nextIdNumber}`;
+    const quotationNumber = documentNumber('QT', nextIdNumber, 0);
     const newQuotation: QuotationItem = {
       ...newQuotationData,
       id: `quot-${Date.now()}`,
       quotationNumber,
       status: 'SUBMITTED',
-      submittedAt: new Date().toISOString().replace('T', ' ').slice(0, 16)
+      submittedAt: toLocalDateTime(new Date())
     };
 
     setQuotations([newQuotation, ...quotations]);
@@ -153,7 +154,7 @@ export default function App() {
     newDeliveryData: Omit<DeliveryItem, 'id' | 'deliveryNumber' | 'inspectionResult'>
   ) => {
     const nextIdNumber = deliveries.length + 42;
-    const deliveryNumber = `DEL-2026-${String(nextIdNumber).padStart(3, '0')}`;
+    const deliveryNumber = documentNumber('DEL', nextIdNumber, 3);
     const newDelivery: DeliveryItem = {
       ...newDeliveryData,
       id: `del-${Date.now()}`,
@@ -181,7 +182,7 @@ export default function App() {
     notes: string,
     signature: string
   ) => {
-    const now = new Date().toISOString().replace('T', ' ').slice(0, 16);
+    const now = toLocalDateTime(new Date());
 
     let relatedOrderId = '';
 
@@ -225,7 +226,7 @@ export default function App() {
     newInvoiceData: Omit<InvoiceItem, 'id' | 'invoiceNumber' | 'paymentStatus'>
   ) => {
     const nextIdNumber = invoices.length + 95;
-    const invoiceNumber = `INV-2026-${String(nextIdNumber).padStart(4, '0')}`;
+    const invoiceNumber = documentNumber('INV', nextIdNumber, 4);
     const newInvoice: InvoiceItem = {
       ...newInvoiceData,
       id: `inv-${Date.now()}`,
@@ -242,8 +243,8 @@ export default function App() {
     const targetInvoice = invoices.find((i) => i.id === invoiceId);
     if (!targetInvoice) return;
 
-    const paymentNumber = `PAY-2026-${String(payments.length + 35).padStart(4, '0')}`;
-    const now = new Date().toISOString().replace('T', ' ').slice(0, 16);
+    const paymentNumber = documentNumber('PAY', payments.length + 35, 4);
+    const now = toLocalDateTime(new Date());
 
     const newPayment: PaymentItem = {
       id: `pay-${Date.now()}`,

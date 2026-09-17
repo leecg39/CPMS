@@ -6,6 +6,7 @@ import {
   InvoiceItem, 
   PaymentItem 
 } from '../types';
+import { currentMonthOptionLabel, orderCreatedInPeriod } from '../utils/liveDates';
 import { 
   BarChart, 
   Bar, 
@@ -91,8 +92,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
     return orders.filter((o) => {
       const matchSite = selectedSite === 'ALL' || o.siteName === selectedSite;
       const matchCategory = selectedCategory === 'ALL' || o.category === selectedCategory;
-      const matchPeriod = selectedPeriod === 'ALL' || 
-        (selectedPeriod === 'SEP' ? o.createdAt.startsWith('2026-09') : true);
+      const matchPeriod = orderCreatedInPeriod(o.createdAt, selectedPeriod);
       return matchSite && matchCategory && matchPeriod;
     });
   }, [orders, selectedSite, selectedCategory, selectedPeriod]);
@@ -370,7 +370,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
               className="bg-transparent font-semibold text-slate-700 outline-none cursor-pointer"
             >
               <option value="ALL">전체 누적 기간</option>
-              <option value="SEP">2026년 9월 당월</option>
+              <option value="CURRENT_MONTH">{currentMonthOptionLabel()}</option>
             </select>
           </div>
 
