@@ -106,10 +106,10 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
   const nav = (
     <nav aria-label="조달 매뉴얼" className="px-4 py-5">
       <div className="mb-5">
-        <h2 className="font-display text-body font-semibold text-carbon">
+        <h2 className="font-display text-body font-semibold text-obsidian">
           7단계 조달 라이프사이클
         </h2>
-        <p className="text-caption text-ash mt-1 leading-snug">
+        <p className="text-caption text-platinum mt-1 leading-snug">
           단계를 선택하면 해당 표준 운영 매뉴얼이 열립니다.
         </p>
       </div>
@@ -125,24 +125,24 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
                 onClick={() => handleSelect(step.manualId)}
                 aria-current={isActive ? 'page' : undefined}
                 className={`w-full text-left rounded-lg px-2.5 py-2 transition-colors cursor-pointer ${
-                  isActive ? 'bg-ice' : 'hover:bg-frost'
+                  isActive ? 'bg-paper-white' : 'hover:bg-pebble'
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-caption text-ash tabular-nums w-5 shrink-0">
+                  <span className="text-caption text-platinum tabular-nums w-5 shrink-0">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <Icon className="w-4 h-4 text-carbon shrink-0" strokeWidth={1.5} />
+                  <Icon className="w-4 h-4 text-obsidian shrink-0" strokeWidth={1.5} />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between gap-2">
-                      <span className={`text-body-sm font-semibold leading-snug ${isActive ? 'text-apple-blue' : 'text-carbon'}`}>
+                      <span className={`text-body-sm font-semibold leading-snug ${isActive ? 'text-apple-blue' : 'text-obsidian'}`}>
                         {step.title}
                       </span>
-                      <span className="text-caption px-2 py-0.5 rounded-full bg-pebble text-carbon shrink-0">
+                      <span className="text-caption px-2 py-0.5 rounded-full bg-pebble text-obsidian shrink-0">
                         {step.role}
                       </span>
                     </div>
-                    <p className="text-caption text-ash leading-snug mt-0.5 line-clamp-2">
+                    <p className="text-caption text-platinum leading-snug mt-0.5 line-clamp-2">
                       {step.desc}
                     </p>
                   </div>
@@ -154,7 +154,7 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
       </ol>
 
       <div className="mt-6 pt-5 border-t hairline">
-        <h2 className="text-caption font-semibold text-ash tracking-wide mb-2">
+        <h2 className="text-caption font-semibold text-platinum tracking-wide mb-2">
           기타 매뉴얼
         </h2>
         <ul className="space-y-0.5">
@@ -167,17 +167,17 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
                   onClick={() => handleSelect(manual.id)}
                   aria-current={isActive ? 'page' : undefined}
                   className={`w-full text-left rounded-lg px-2.5 py-2 transition-colors cursor-pointer ${
-                    isActive ? 'bg-ice' : 'hover:bg-frost'
+                    isActive ? 'bg-paper-white' : 'hover:bg-pebble'
                   }`}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-caption text-ash shrink-0">
+                    <span className="font-mono text-caption text-platinum shrink-0">
                       {manual.code}
                     </span>
-                    <span className={`text-body-sm leading-snug ${isActive ? 'text-apple-blue font-semibold' : 'text-carbon'}`}>
+                    <span className={`text-body-sm leading-snug ${isActive ? 'text-apple-blue font-semibold' : 'text-obsidian'}`}>
                       {otherManualLabel(manual.id, manual.title)}
                     </span>
-                    <ChevronRight className="w-3.5 h-3.5 text-mist ml-auto shrink-0" />
+                    <ChevronRight className="w-3.5 h-3.5 text-platinum ml-auto shrink-0" />
                   </div>
                 </button>
               </li>
@@ -194,7 +194,7 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
         <button
           type="button"
           onClick={() => setMobileOpen(true)}
-          className="w-full flex items-center justify-between gap-2 px-3.5 py-2.5 bg-white border hairline rounded-lg text-body-sm text-carbon cursor-pointer"
+          className="w-full flex items-center justify-between gap-2 px-3.5 py-2.5 bg-frost-white rounded-[28px] text-body-sm text-obsidian cursor-pointer"
           aria-expanded={mobileOpen}
           aria-controls="manual-sidebar"
         >
@@ -202,7 +202,7 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
             <BookOpen className="w-4 h-4" />
             <span>매뉴얼 패널</span>
           </span>
-          <span className="text-caption text-ash">7단계 + 기타 {otherManuals.length}건</span>
+          <span className="text-caption text-platinum">7단계 + 기타 {otherManuals.length}건</span>
         </button>
       </div>
 
@@ -219,14 +219,14 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
             className="absolute left-0 top-0 bottom-0 w-[min(20rem,92vw)] bg-white overflow-y-auto"
           >
             <div className="flex items-center justify-between px-4 py-3 border-b hairline">
-              <span className="text-body-sm font-semibold text-carbon">매뉴얼</span>
+              <span className="text-body-sm font-semibold text-obsidian">매뉴얼</span>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="p-1.5 rounded-full hover:bg-frost cursor-pointer"
+                className="p-1.5 rounded-full hover:bg-pebble cursor-pointer"
                 aria-label="닫기"
               >
-                <X className="w-4 h-4 text-carbon" />
+                <X className="w-4 h-4 text-obsidian" />
               </button>
             </div>
             {nav}
@@ -236,7 +236,7 @@ export const InteractiveWorkflowBar: React.FC<WorkflowBarProps> = ({
 
       <aside
         id="manual-sidebar-desktop"
-        className="hidden lg:block w-[280px] shrink-0 self-start sticky top-[100px] max-h-[calc(100vh-116px)] overflow-y-auto bg-white border hairline rounded-lg"
+        className="hidden lg:block w-[280px] shrink-0 self-start sticky top-[100px] max-h-[calc(100vh-116px)] overflow-y-auto bg-frost-white rounded-[28px]"
       >
         {nav}
       </aside>

@@ -258,7 +258,7 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
                 onClick={() => setInvoiceType('RECEIVER')}
                 className={`px-3 py-1 rounded-full font-bold transition-all cursor-pointer ${
                   invoiceType === 'RECEIVER'
-                    ? 'bg-apple-blue text-ice'
+                    ? 'bg-obsidian text-frost-white'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -300,7 +300,7 @@ export const DocumentPdfModal: React.FC<DocumentPdfModalProps> = ({
             {/* 인쇄하기 버튼 */}
             <button
               onClick={handlePrint}
-              className="px-3 py-2 btn-primary btn-sm rounded-full text-xs font-bold transition-all border border-slate-700 flex items-center gap-1.5 cursor-pointer"
+              className="px-3 py-2 btn-secondary-dark btn-sm rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
               title="브라우저 인쇄 다이얼로그 호출"
             >
               <Printer className="w-4 h-4 text-slate-300" />

@@ -109,13 +109,13 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Sub-navigation & Site Selector */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white p-3.5 rounded-2xl border border-slate-200 shadow-xs">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-frost-white p-3.5 rounded-2xl shadow-xs">
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none w-full sm:w-auto">
           <button
             onClick={() => setActiveSubTab('dashboard')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'dashboard'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -127,7 +127,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             onClick={() => setActiveSubTab('analytics')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'analytics'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -139,7 +139,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             onClick={() => setActiveSubTab('orders')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'orders'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -151,7 +151,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             onClick={() => setActiveSubTab('deliveries')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'deliveries'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -163,7 +163,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             onClick={() => setActiveSubTab('payments')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'payments'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -203,7 +203,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
         <div className="space-y-6">
           {/* KPI Summary Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">총 발주 계약 누계</span>
                 <span className="text-xl font-black text-slate-900 font-mono">
@@ -216,7 +216,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">승인/견적 대기 건수</span>
                 <span className="text-xl font-black text-amber-600 font-mono">
@@ -229,7 +229,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">운송 중 / 검수 대기</span>
                 <span className="text-xl font-black text-cyan-600 font-mono">
@@ -242,7 +242,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">미결제 청구 송장</span>
                 <span className="text-xl font-black text-purple-600 font-mono">
@@ -257,25 +257,25 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
           </div>
 
           {/* Efficiency Analytics Quick Banner */}
-          <div className="bg-white text-carbon p-5 rounded-lg border border-slate-200 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+          <div className="bg-white text-obsidian p-5 rounded-lg border border-slate-200 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-lg border border-slate-200 flex items-center justify-center shrink-0">
-                <TrendingUp className="w-6 h-6 text-carbon" />
+                <TrendingUp className="w-6 h-6 text-obsidian" />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-xs font-medium text-ash flex items-center gap-1">
+                  <span className="text-xs font-medium text-platinum flex items-center gap-1">
                     <Sparkles className="w-3.5 h-3.5" />
                     조달 효율성 빅데이터 분석
                   </span>
-                  <span className="text-[11px] px-2 py-0.5 rounded-full font-medium bg-pebble text-carbon">
+                  <span className="text-[11px] px-2 py-0.5 rounded-full font-medium bg-pebble text-obsidian">
                     종합 효율성 95.2점 (S등급)
                   </span>
                 </div>
-                <h4 className="text-sm font-medium text-carbon">
+                <h4 className="text-sm font-medium text-obsidian">
                   현장별 발주·납품·결제 3대 축 조달 효율성 및 공급망 성과 분석
                 </h4>
-                <p className="text-xs text-ash mt-0.5">
+                <p className="text-xs text-platinum mt-0.5">
                   5개 건설 현장과 5개 주요 협력 공급사 간 적기 납품률(96.5%), 품질 합격률(100%), 자금 결제 집행률 비교 차트를 제공합니다.
                 </p>
               </div>
@@ -290,9 +290,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
           </div>
 
           {/* Quick Notice Callout for Site Manager Manuals */}
-          <div className="bg-white border border-slate-200 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="bg-frost-white rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-carbon text-frost shrink-0">
+              <div className="p-2 rounded-lg bg-obsidian text-frost-white shrink-0">
                 <HelpCircle className="w-5 h-5" />
               </div>
               <div>
@@ -321,7 +321,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
           </div>
 
           {/* Recent Deliveries Requiring Inspection */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
+          <div className="bg-frost-white rounded-2xl p-5 shadow-xs">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
@@ -375,7 +375,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                     ) : (
                       <button
                         onClick={() => onOpenInspectionModal(del)}
-                        className="px-4 py-2 btn-primary btn-sm text-xs font-bold rounded-full shadow-xs transition-all cursor-pointer flex items-center gap-1.5"
+                        className="px-4 py-2 btn-secondary btn-sm text-xs font-bold rounded-full shadow-xs transition-all cursor-pointer flex items-center gap-1.5"
                       >
                         <ClipboardCheck className="w-4 h-4" />
                         <span>현장 실물 검수 및 서명</span>
@@ -405,24 +405,24 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
       {activeSubTab === 'orders' && (
         <div className="space-y-4">
           {/* Order Validation Pipeline Banner */}
-          <div className="bg-white rounded-lg p-4 text-carbon border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="bg-white rounded-lg p-4 text-obsidian border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg border border-slate-200 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-carbon" />
+                <ShieldCheck className="w-5 h-5 text-obsidian" />
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-[11px] font-medium text-ash">
+                  <span className="text-[11px] font-medium text-platinum">
                     발주신청서 양식 자동 체크 및 정밀 검증
                   </span>
-                  <span className="text-[11px] px-2 py-0.5 rounded-full font-medium bg-pebble text-carbon">
+                  <span className="text-[11px] px-2 py-0.5 rounded-full font-medium bg-pebble text-obsidian">
                     4단계 순서 검증
                   </span>
                 </div>
-                <h4 className="text-xs font-medium text-carbon">
+                <h4 className="text-xs font-medium text-obsidian">
                   누락·모호한 표현·단위 오류 자동 체크 ➔ 스마트 수정 ➔ 사전 검수 ➔ 발주요청
                 </h4>
-                <p className="text-[11px] text-ash">
+                <p className="text-[11px] text-platinum">
                   6대 핵심 항목(품목 ID, 수량, 단위, 희망일, 배송 위치, 규격)을 검증하여 발주 반려를 사전에 차단합니다.
                 </p>
               </div>
@@ -439,8 +439,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
 
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-subheading font-semibold text-carbon">전체 자재 발주(Order) 현황 목록</h3>
-              <p className="text-body-sm text-ash">공종별 소요 자재 발주 내역 및 공급사 견적 채택 현황</p>
+              <p className="eyebrow text-[14px] mb-1">발주</p>
+              <h3 className="font-display text-heading font-bold text-obsidian tracking-heading">전체 자재 발주(Order) 현황 목록</h3>
+              <p className="text-body text-platinum">공종별 소요 자재 발주 내역 및 공급사 견적 채택 현황</p>
             </div>
             <button
               onClick={() => onOpenManual('man-02')}
@@ -451,7 +452,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             </button>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+          <div className="bg-frost-white rounded-2xl overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-slate-600">
                 <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider text-[11px]">
@@ -512,7 +513,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                             {order.status === 'QUOTED' && relatedQuotations.length > 0 && (
                               <button
                                 onClick={() => onApproveQuotation(relatedQuotations[0].id, order.id)}
-                                className="px-2.5 py-1 btn-primary btn-sm rounded-full font-bold text-[11px] transition-all cursor-pointer shadow-xs"
+                                className="px-2.5 py-1 btn-secondary btn-sm rounded-full font-bold text-[11px] transition-all cursor-pointer shadow-xs"
                                 title="공급사 제안 견적 채택 및 발주 승인"
                               >
                                 견적 채택 승인
@@ -554,8 +555,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-subheading font-semibold text-carbon">현장 자재 입고 및 품질 검수(Inspection) 대장</h3>
-              <p className="text-body-sm text-ash">배송 도착 차량 확인, 실물 수량 계측, 시험성적서 대조 및 전자 인수증 서명</p>
+              <p className="eyebrow text-[14px] mb-1">검수</p>
+              <h3 className="font-display text-heading font-bold text-obsidian tracking-heading">현장 자재 입고 및 품질 검수(Inspection) 대장</h3>
+              <p className="text-body text-platinum">배송 도착 차량 확인, 실물 수량 계측, 시험성적서 대조 및 전자 인수증 서명</p>
             </div>
             <button
               onClick={() => onOpenManual('man-04')}
@@ -570,7 +572,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             {deliveries.map((del) => (
               <div
                 key={del.id}
-                className="bg-white rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all"
+                className="bg-frost-white rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-4 hover:border-slate-300 transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -622,7 +624,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                   ) : (
                     <button
                       onClick={() => onOpenInspectionModal(del)}
-                      className="w-full py-2 btn-primary btn-sm text-xs font-bold rounded-full shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                      className="w-full py-2 btn-secondary btn-sm text-xs font-bold rounded-full shadow-xs transition-all cursor-pointer flex items-center justify-center gap-1.5"
                     >
                       <ClipboardCheck className="w-4 h-4" />
                       <span>품질 검수 및 전자 인수 서명</span>
@@ -640,8 +642,9 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-subheading font-semibold text-carbon">공급업체 청구 송장 및 대금 지급 승인</h3>
-              <p className="text-body-sm text-ash">검수 완료 자재에 대한 전자세금계산서 검토 및 법인 계좌이체/어음 결제 집행</p>
+              <p className="eyebrow text-[14px] mb-1">결제</p>
+              <h3 className="font-display text-heading font-bold text-obsidian tracking-heading">공급업체 청구 송장 및 대금 지급 승인</h3>
+              <p className="text-body text-platinum">검수 완료 자재에 대한 전자세금계산서 검토 및 법인 계좌이체/어음 결제 집행</p>
             </div>
             <button
               onClick={() => onOpenManual('man-05')}
@@ -656,7 +659,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
             {invoices.map((inv) => (
               <div
                 key={inv.id}
-                className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-col justify-between space-y-4"
+                className="bg-frost-white rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-4"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -715,7 +718,7 @@ export const SiteManagerView: React.FC<SiteManagerViewProps> = ({
                   ) : (
                     <button
                       onClick={() => onApprovePayment(inv.id)}
-                      className="w-full py-2.5 btn-primary btn-sm text-xs font-bold rounded-full shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                      className="w-full py-2.5 btn-secondary btn-sm text-xs font-bold rounded-full shadow-md transition-all cursor-pointer flex items-center justify-center gap-1.5"
                     >
                       <CreditCard className="w-4 h-4" />
                       <span>대금 결제 승인 및 송금 완료 처리</span>

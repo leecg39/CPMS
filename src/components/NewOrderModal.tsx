@@ -227,7 +227,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
               onClick={() => setCurrentStep('CHECK')}
               className={`p-2 rounded-full border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
                 currentStep === 'CHECK'
-                  ? 'bg-apple-blue text-ice border-apple-blue'
+                  ? 'bg-obsidian text-frost-white border-obsidian'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
@@ -246,7 +246,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
               onClick={() => setCurrentStep('MODIFY')}
               className={`p-2 rounded-full border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
                 currentStep === 'MODIFY'
-                  ? 'bg-apple-blue text-ice border-apple-blue'
+                  ? 'bg-obsidian text-frost-white border-obsidian'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
@@ -261,7 +261,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
               onClick={() => setCurrentStep('INSPECT')}
               className={`p-2 rounded-full border flex items-center justify-center gap-1.5 font-bold transition-all cursor-pointer ${
                 currentStep === 'INSPECT'
-                  ? 'bg-apple-blue text-ice border-apple-blue'
+                  ? 'bg-obsidian text-frost-white border-obsidian'
                   : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
               }`}
             >
@@ -764,7 +764,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
               </div>
 
               {/* 6 Items Checklist Grid */}
-              <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs divide-y divide-slate-100">
+              <div className="bg-frost-white rounded-2xl overflow-hidden shadow-2xs divide-y divide-slate-100">
                 {/* 1. 품목 ID */}
                 <div className="p-3.5 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
@@ -881,7 +881,7 @@ export const NewOrderModal: React.FC<NewOrderModalProps> = ({
           {/* ================= STEP 4: 발주요청 확정 (SUBMIT) ================= */}
           {currentStep === 'SUBMIT' && (
             <div className="space-y-4 animate-in fade-in duration-150">
-              <div className="rounded-2xl border border-slate-200 p-5 bg-white shadow-xs space-y-4">
+              <div className="rounded-2xl p-5 bg-frost-white shadow-xs space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-3">
                   <div>
                     <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">

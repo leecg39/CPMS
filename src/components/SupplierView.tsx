@@ -62,13 +62,13 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Sub-navigation */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white p-3.5 rounded-2xl border border-slate-200 shadow-xs">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-frost-white p-3.5 rounded-2xl shadow-xs">
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none w-full sm:w-auto">
           <button
             onClick={() => setActiveSubTab('dashboard')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'dashboard'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -80,7 +80,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             onClick={() => setActiveSubTab('quotations')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'quotations'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -92,7 +92,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             onClick={() => setActiveSubTab('deliveries')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'deliveries'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -104,7 +104,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             onClick={() => setActiveSubTab('invoices')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'invoices'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -116,7 +116,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             onClick={() => setActiveSubTab('payments')}
             className={`px-3.5 py-2 text-xs font-bold rounded-full flex items-center gap-1.5 transition-all cursor-pointer ${
               activeSubTab === 'payments'
-                ? 'bg-apple-blue text-ice'
+                ? 'bg-obsidian text-frost-white'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
             }`}
           >
@@ -141,7 +141,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
         <div className="space-y-6">
           {/* KPI Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">총 납품 청구액 (송장)</span>
                 <span className="text-xl font-black text-slate-900 font-mono">
@@ -154,7 +154,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">수금 완료 정산액</span>
                 <span className="text-xl font-black text-emerald-600 font-mono">
@@ -167,7 +167,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">미수금 (결제 대기)</span>
                 <span className="text-xl font-black text-amber-600 font-mono">
@@ -180,7 +180,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center justify-between">
+            <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-slate-400 block mb-1">배차 필요 발주 승인건</span>
                 <span className="text-xl font-black text-cyan-600 font-mono">
@@ -197,7 +197,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
           {/* Action Callout Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* New Orders needing quotation */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3">
+            <div className="bg-frost-white rounded-2xl p-5 shadow-xs space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                   <Calculator className="w-4 h-4 text-indigo-600" />
@@ -233,7 +233,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
                     </div>
                     <button
                       onClick={() => onOpenQuotationModal(order)}
-                      className="px-3 py-1.5 btn-primary btn-sm rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer shrink-0 flex items-center gap-1"
+                      className="px-3 py-1.5 btn-secondary btn-sm rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer shrink-0 flex items-center gap-1"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>견적 작성</span>
@@ -244,7 +244,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             </div>
 
             {/* Approved orders ready for delivery dispatch */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3">
+            <div className="bg-frost-white rounded-2xl p-5 shadow-xs space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                   <Truck className="w-4 h-4 text-cyan-600" />
@@ -289,7 +289,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
                       </button>
                       <button
                         onClick={() => onOpenDeliveryModal(order)}
-                        className="px-3 py-1.5 btn-primary btn-sm rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer flex items-center gap-1"
+                        className="px-3 py-1.5 btn-secondary btn-sm rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer flex items-center gap-1"
                       >
                         <Truck className="w-3.5 h-3.5" />
                         <span>출하 등록</span>
@@ -314,8 +314,9 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-subheading font-semibold text-carbon">제출된 자재 단가 견적서(Quotation) 목록</h3>
-              <p className="text-body-sm text-ash">현장 발주 건에 대해 제안한 단가, 납기 소요 일수 및 승인 채택 상태</p>
+              <p className="eyebrow-violet text-[14px] mb-1">견적</p>
+              <h3 className="font-display text-heading font-bold text-obsidian tracking-heading">제출된 자재 단가 견적서(Quotation) 목록</h3>
+              <p className="text-body text-platinum">현장 발주 건에 대해 제안한 단가, 납기 소요 일수 및 승인 채택 상태</p>
             </div>
             <button
               onClick={() => onOpenManual('man-06')}
@@ -326,7 +327,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             </button>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+          <div className="bg-frost-white rounded-2xl overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-slate-600">
                 <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider text-[11px]">
@@ -399,8 +400,9 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-subheading font-semibold text-carbon">자재 출하 및 실시간 배송(Delivery) 현황</h3>
-              <p className="text-body-sm text-ash">운송 화물차량 번호, 기사 연락처, 예상 도착 시간 및 현장 검수 진행 상태</p>
+              <p className="eyebrow-violet text-[14px] mb-1">출하·배송</p>
+              <h3 className="font-display text-heading font-bold text-obsidian tracking-heading">자재 출하 및 실시간 배송(Delivery) 현황</h3>
+              <p className="text-body text-platinum">운송 화물차량 번호, 기사 연락처, 예상 도착 시간 및 현장 검수 진행 상태</p>
             </div>
             <button
               onClick={() => onOpenManual('man-07')}
@@ -415,7 +417,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             {deliveries.map((del) => (
               <div
                 key={del.id}
-                className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-col justify-between space-y-3"
+                className="bg-frost-white rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-3"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -468,8 +470,9 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-subheading font-semibold text-carbon">전자세금계산서/송장(Invoice) 발행 및 청구 내역</h3>
-              <p className="text-body-sm text-ash">검수 완료 자재에 대한 공급가액/부가세 계산서 발행 및 현장 청구</p>
+              <p className="eyebrow-violet text-[14px] mb-1">송장</p>
+              <h3 className="font-display text-heading font-bold text-obsidian tracking-heading">전자세금계산서/송장(Invoice) 발행 및 청구 내역</h3>
+              <p className="text-body text-platinum">검수 완료 자재에 대한 공급가액/부가세 계산서 발행 및 현장 청구</p>
             </div>
             <button
               onClick={() => onOpenManual('man-08')}
@@ -482,7 +485,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
 
           {/* Orders eligible for new invoice */}
           {deliveredOrdersNeedingInvoice.length > 0 && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-4 space-y-2">
+            <div className="bg-frost-white rounded-2xl p-4 space-y-2">
               <span className="text-xs font-bold text-purple-950 flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-purple-600" />
                 현장 검수 완료되어 즉시 송장 발행 가능한 발주건이 있습니다:
@@ -497,7 +500,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
                     </div>
                     <button
                       onClick={() => onOpenInvoiceModal(o)}
-                      className="px-3 py-1.5 btn-primary btn-sm rounded-full text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1 shrink-0"
+                      className="px-3 py-1.5 btn-secondary btn-sm rounded-full text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1 shrink-0"
                     >
                       <Receipt className="w-3.5 h-3.5" />
                       <span>송장 발행</span>
@@ -512,7 +515,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             {invoices.map((inv) => (
               <div
                 key={inv.id}
-                className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-col justify-between space-y-3"
+                className="bg-frost-white rounded-2xl p-5 shadow-xs flex flex-col justify-between space-y-3"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -589,8 +592,9 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-subheading font-semibold text-carbon">수금 및 자재 대금 결제 확인 대장</h3>
-              <p className="text-body-sm text-ash">현장에서 지급 완료된 법인 계좌이체 및 정산 마감 내역</p>
+              <p className="eyebrow-violet text-[14px] mb-1">수금</p>
+              <h3 className="font-display text-heading font-bold text-obsidian tracking-heading">수금 및 자재 대금 결제 확인 대장</h3>
+              <p className="text-body text-platinum">현장에서 지급 완료된 법인 계좌이체 및 정산 마감 내역</p>
             </div>
             <button
               onClick={() => onOpenManual('man-09')}
@@ -601,7 +605,7 @@ export const SupplierView: React.FC<SupplierViewProps> = ({
             </button>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+          <div className="bg-frost-white rounded-2xl overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-slate-600">
                 <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200 uppercase tracking-wider text-[11px]">

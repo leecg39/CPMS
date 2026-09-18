@@ -309,7 +309,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
   return (
     <div className="space-y-6 animate-in fade-in duration-200">
       {/* Top Banner & Control Bar */}
-      <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+      <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200 flex items-center gap-1">
@@ -389,7 +389,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
       {/* 6 Essential KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5">
         {/* KPI 1: Comprehensive Efficiency Score */}
-        <div className="bg-carbon text-frost p-4 rounded-2xl shadow-xs flex flex-col justify-between sm:col-span-2 lg:col-span-2">
+        <div className="bg-obsidian text-frost-white p-4 rounded-2xl shadow-xs flex flex-col justify-between sm:col-span-2 lg:col-span-2">
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium text-blue-100 flex items-center gap-1">
               <Award className="w-4 h-4 text-amber-300" />
@@ -414,7 +414,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
         </div>
 
         {/* KPI 2: Total Order Amount */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="bg-frost-white p-4 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <span className="text-xs font-bold text-slate-400 block mb-1">총 발주 계약 누계</span>
             <span className="text-lg font-black text-slate-900 font-mono">
@@ -429,7 +429,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
         </div>
 
         {/* KPI 3: Delivered & Inspected */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="bg-frost-white p-4 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <span className="text-xs font-bold text-slate-400 block mb-1">납품 인도 및 검수액</span>
             <span className="text-lg font-black text-emerald-600 font-mono">
@@ -444,7 +444,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
         </div>
 
         {/* KPI 4: Settled / Paid Amount */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="bg-frost-white p-4 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <span className="text-xs font-bold text-slate-400 block mb-1">정산 완료 결제 집행</span>
             <span className="text-lg font-black text-indigo-600 font-mono">
@@ -459,7 +459,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
         </div>
 
         {/* KPI 5: On-Time & Quality Pass Rate */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="bg-frost-white p-4 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <span className="text-xs font-bold text-slate-400 block mb-1">적기 납품 / 검수 합격률</span>
             <div className="flex items-baseline gap-1.5">
@@ -479,7 +479,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
       {/* Row 1 Charts: Site-by-site 3-Way Comparison & Weekly Flow Trends */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Chart 1: Site-by-site Bar Chart (7 Cols) */}
-        <div className="lg:col-span-7 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
               <div>
@@ -561,7 +561,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
         </div>
 
         {/* Chart 2: Weekly Timeline Trends (5 Cols) */}
-        <div className="lg:col-span-5 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-3">
               <div>
@@ -651,7 +651,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
       {/* Row 2 Charts: Category Distribution & Supplier Performance */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Chart 3: Category Distribution Donut (5 Cols) */}
-        <div className="lg:col-span-5 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
@@ -720,7 +720,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
         </div>
 
         {/* Chart 4: Supplier Performance & Reliability (7 Cols) */}
-        <div className="lg:col-span-7 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
               <div>
@@ -798,7 +798,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
       </div>
 
       {/* Row 3: Site Procurement Efficiency Scorecard Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+      <div className="bg-frost-white rounded-2xl overflow-hidden shadow-xs">
         <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
           <div>
             <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
@@ -947,7 +947,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
 
       {/* Row 4: AI & System Procurement Optimization Action Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-2 text-xs font-bold text-blue-700">
               <Zap className="w-4 h-4 text-blue-600" />
@@ -966,7 +966,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-2 text-xs font-bold text-amber-700">
               <AlertCircle className="w-4 h-4 text-amber-600" />
@@ -985,7 +985,7 @@ export const ProcurementEfficiencyDashboard: React.FC<ProcurementEfficiencyDashb
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div className="bg-frost-white p-5 rounded-2xl shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-2 text-xs font-bold text-emerald-700">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />

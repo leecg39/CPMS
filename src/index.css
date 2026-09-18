@@ -1,24 +1,33 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
- * Apple — Style Reference ("white room with a single blue switch")
- * Theme: light · Frost canvas · one blue action · hairlines, no elevation
+ * Apple (España) — Style Reference
+ * "obsidian gallery vitrine" · Theme: mixed (dark stages → light bands)
+ * Three-act rhythm: dark hero → dark feature stage → white detail band
  * ------------------------------------------------------------------ */
 @theme {
   /* Brand colors */
+  --color-obsidian: #1d1d1f;
+  --color-frost-white: #f5f5f7;
+  --color-pure-black: #000000;
+  --color-paper-white: #ffffff;
+  --color-carbon: #111111;
+  --color-platinum: #86868b;
+  --color-graphite: #333336;
+  --color-silver-mist: #cccccc;
+  --color-smoke: #424245;
   --color-apple-blue: #0071e3;
   --color-link-blue: #0066cc;
-  --color-signal-blue: #2997ff;
-  --color-carbon: #1d1d1f;
-  --color-frost: #f5f5f7;
-  --color-ice: #f4f8fb;
-  --color-smoke: #333333;
-  --color-graphite: #474747;
-  --color-ash: #707070;
-  --color-mist: #858585;
-  --color-onyx: #000000;
-  --color-pebble: #e2e2e5;
+  --color-halo-blue: #2997ff;
+  --color-signal-orange: #f56900;
+  --color-iris-violet: #8668ff;
+  --color-reef-teal: #00a1b3;
+
+  /* Light-band structural neutrals */
   --color-hairline: #d2d2d7;
+  --color-pebble: #e8e8ed;
+  --color-frost: #f5f5f7;
+  --color-ice: #ffffff;
 
   /* Font families — SF Pro on Apple platforms, Inter elsewhere, Pretendard for Hangul */
   --font-sf-pro-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Pretendard", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
@@ -26,132 +35,141 @@
   --font-sans: var(--font-sf-pro-text);
   --font-display: var(--font-sf-pro-display);
 
-  /* Type scale */
+  /* Type scale (negative tracking tightens with size) */
   --text-caption: 12px;
-  --text-caption--line-height: 1.33;
-  --text-caption--letter-spacing: -0.264px;
-  --text-body-sm: 14px;
-  --text-body-sm--line-height: 1.29;
-  --text-body-sm--letter-spacing: -0.224px;
-  --text-body: 17px;
-  --text-body--line-height: 1.47;
-  --text-body--letter-spacing: -0.272px;
-  --text-subheading: 21px;
-  --text-subheading--line-height: 1.24;
-  --text-subheading--letter-spacing: -0.105px;
-  --text-heading-sm: 28px;
-  --text-heading-sm--line-height: 1.18;
-  --text-heading-sm--letter-spacing: 0.196px;
-  --text-heading: 40px;
-  --text-heading--line-height: 1.14;
-  --text-heading--letter-spacing: 0.44px;
-  --text-heading-lg: 44px;
-  --text-heading-lg--line-height: 1.18;
-  --text-heading-lg--letter-spacing: -0.44px;
+  --text-caption--line-height: 1.5;
+  --text-caption--letter-spacing: -0.37px;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 1.43;
+  --text-body-sm--letter-spacing: -0.22px;
+  --text-body: 14px;
+  --text-body--line-height: 1.43;
+  --text-body--letter-spacing: -0.22px;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 1.47;
+  --text-body-lg--letter-spacing: -0.37px;
+  --text-subheading: 19px;
+  --text-subheading--line-height: 1.21;
+  --text-subheading--letter-spacing: -0.28px;
+  --text-heading-sm: 19px;
+  --text-heading-sm--line-height: 1.21;
+  --text-heading-sm--letter-spacing: -0.28px;
+  --text-heading: 24px;
+  --text-heading--line-height: 1.17;
+  --text-heading--letter-spacing: -0.24px;
+  --text-heading-lg: 32px;
+  --text-heading-lg--line-height: 1.14;
+  --text-heading-lg--letter-spacing: -0.32px;
   --text-display: 56px;
   --text-display--line-height: 1.07;
-  --text-display--letter-spacing: 0.616px;
+  --text-display--letter-spacing: -0.84px;
+  --text-hero: 80px;
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -0.24px;
 
-  /* Remap default Tailwind sizes onto the Apple scale */
+  /* Remap default Tailwind sizes onto the scale */
   --text-xs: 12px;
-  --text-xs--line-height: 1.33;
-  --text-xs--letter-spacing: -0.264px;
+  --text-xs--line-height: 1.5;
+  --text-xs--letter-spacing: -0.3px;
   --text-sm: 14px;
-  --text-sm--line-height: 1.29;
-  --text-sm--letter-spacing: -0.224px;
+  --text-sm--line-height: 1.43;
+  --text-sm--letter-spacing: -0.22px;
   --text-base: 17px;
   --text-base--line-height: 1.47;
-  --text-base--letter-spacing: -0.272px;
-  --text-lg: 21px;
-  --text-lg--line-height: 1.24;
-  --text-lg--letter-spacing: -0.105px;
-  --text-xl: 21px;
-  --text-xl--line-height: 1.24;
-  --text-xl--letter-spacing: -0.105px;
-  --text-2xl: 28px;
-  --text-2xl--line-height: 1.18;
-  --text-2xl--letter-spacing: 0.196px;
-  --text-3xl: 40px;
-  --text-3xl--line-height: 1.14;
-  --text-3xl--letter-spacing: 0.44px;
-  --text-4xl: 56px;
-  --text-4xl--line-height: 1.07;
-  --text-4xl--letter-spacing: 0.616px;
+  --text-base--letter-spacing: -0.37px;
+  --text-lg: 19px;
+  --text-lg--line-height: 1.21;
+  --text-lg--letter-spacing: -0.28px;
+  --text-xl: 24px;
+  --text-xl--line-height: 1.17;
+  --text-xl--letter-spacing: -0.24px;
+  --text-2xl: 32px;
+  --text-2xl--line-height: 1.14;
+  --text-2xl--letter-spacing: -0.32px;
+  --text-3xl: 56px;
+  --text-3xl--line-height: 1.07;
+  --text-3xl--letter-spacing: -0.84px;
+  --text-4xl: 80px;
+  --text-4xl--line-height: 1.05;
+  --text-4xl--letter-spacing: -0.24px;
 
-  /* Weights — 300 subheads · 400 body · 600 nav/buttons/headlines (max) · 700 editorial only */
-  --font-weight-light: 300;
+  /* Weights — 400 body · 600 nav/buttons/labels · 700 display headlines */
+  --font-weight-light: 400;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 600;
-  --font-weight-extrabold: 600;
+  --font-weight-extrabold: 700;
   --font-weight-black: 700;
 
   /* Spacing */
   --spacing-unit: 4px;
 
-  /* Border radius — only two values: 8px (cards/images/inputs) and 980px (buttons/tags) */
-  --radius-xs: 8px;
-  --radius-sm: 8px;
-  --radius: 8px;
-  --radius-md: 8px;
-  --radius-lg: 8px;
-  --radius-lg-2: 11px;
-  --radius-xl: 8px;
-  --radius-2xl: 8px;
-  --radius-3xl: 8px;
-  --radius-4xl: 8px;
+  /* Border radius — restricted set: 10 (links/inputs) · 28 (cards) · 36 (buttons) · 980 (pills/nav) */
+  --radius-xs: 10px;
+  --radius-sm: 10px;
+  --radius: 10px;
+  --radius-md: 10px;
+  --radius-lg: 10px;
+  --radius-xl: 10px;
+  --radius-2xl: 28px;
+  --radius-3xl: 28px;
+  --radius-3xl-2: 32px;
+  --radius-3xl-3: 36px;
+  --radius-4xl: 28px;
   --radius-full: 980px;
-  --radius-full-2: 999px;
 
-  --radius-tags: 980px;
-  --radius-cards: 8px;
-  --radius-images: 8px;
-  --radius-inputs: 8px;
-  --radius-buttons: 980px;
+  --radius-nav: 980px;
+  --radius-pill: 980px;
+  --radius-cards: 28px;
+  --radius-links: 10px;
+  --radius-buttons: 36px;
 
-  /* Elevation — none on cards/buttons/nav. Only product imagery may carry --shadow-xl. */
+  /* Elevation — none. Depth is surface contrast (#000 → #111 → #1d1d1f). */
   --shadow-2xs: 0 0 #0000;
   --shadow-xs: 0 0 #0000;
   --shadow-sm: 0 0 #0000;
   --shadow: 0 0 #0000;
   --shadow-md: 0 0 #0000;
   --shadow-lg: 0 0 #0000;
-  --shadow-xl: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+  --shadow-xl: 0 0 #0000;
   --shadow-2xl: 0 0 #0000;
 
   /* Surfaces */
-  --surface-canvas: #f5f5f7;
-  --surface-elevated-wash: #f4f8fb;
-  --surface-pebble: #e2e2e5;
+  --surface-pure-black-stage: #000000;
+  --surface-carbon-layer: #111111;
+  --surface-obsidian-card: #1d1d1f;
+  --surface-graphite-surface: #333336;
+  --surface-frost-white-panel: #f5f5f7;
+  --surface-paper-white: #ffffff;
 
   /* Layout */
   --page-max-width: 1440px;
-  --section-gap: 64px;
-  --card-padding: 24px;
-  --element-gap: 12px;
+  --card-padding: 28px;
 
   /* ----------------------------------------------------------------
-   * Palette remap: existing utility classes → Apple neutrals
-   * slate  → Apple gray ramp (Frost → Carbon)
-   * blue   → Link Blue for text/borders; Apple Blue fills via .btn-primary
-   * indigo → cool graphite ramp (secondary role tint, never a third blue)
+   * Palette remap: existing utilities → system neutrals & accents
+   * slate  → Apple gray ramp (Paper White → Obsidian)
+   * blue   → Link Blue (text/borders); Apple Blue fills only via .btn-primary
+   * indigo → Iris Violet (secondary category accent: supplier role)
+   * amber  → Signal Orange (category eyebrow: inspection)
+   * cyan   → Reef Teal (tertiary category accent: delivery)
    * ---------------------------------------------------------------- */
-  --color-slate-50: #f5f5f7;
+  --color-slate-50: #ffffff;
   --color-slate-100: #e8e8ed;
   --color-slate-200: #d2d2d7;
   --color-slate-300: #b8b8bd;
-  --color-slate-400: #858585;
-  --color-slate-500: #707070;
-  --color-slate-600: #474747;
-  --color-slate-700: #333333;
-  --color-slate-800: #2a2a2c;
+  --color-slate-400: #86868b;
+  --color-slate-500: #86868b;
+  --color-slate-600: #6e6e73;
+  --color-slate-700: #424245;
+  --color-slate-800: #333336;
   --color-slate-900: #1d1d1f;
   --color-slate-950: #000000;
 
-  --color-blue-50: #f4f8fb;
-  --color-blue-100: #e3effb;
-  --color-blue-200: #c8dff7;
+  --color-blue-50: #f0f6fd;
+  --color-blue-100: #dcebfb;
+  --color-blue-200: #bcd8f7;
   --color-blue-300: #8ec0f2;
   --color-blue-400: #2997ff;
   --color-blue-500: #0071e3;
@@ -161,17 +179,39 @@
   --color-blue-900: #003366;
   --color-blue-950: #1d1d1f;
 
-  --color-indigo-50: #f4f8fb;
-  --color-indigo-100: #e8eef5;
-  --color-indigo-200: #d2dbe5;
-  --color-indigo-300: #aab8c9;
-  --color-indigo-400: #7f8fa3;
-  --color-indigo-500: #5b6b7f;
-  --color-indigo-600: #474747;
-  --color-indigo-700: #333333;
-  --color-indigo-800: #2a2a2c;
-  --color-indigo-900: #1d1d1f;
+  --color-indigo-50: #f4f1ff;
+  --color-indigo-100: #e8e2ff;
+  --color-indigo-200: #d3c8ff;
+  --color-indigo-300: #b7a6ff;
+  --color-indigo-400: #9d87ff;
+  --color-indigo-500: #8668ff;
+  --color-indigo-600: #7355e6;
+  --color-indigo-700: #5f44c4;
+  --color-indigo-800: #4b369c;
+  --color-indigo-900: #3a2a78;
   --color-indigo-950: #1d1d1f;
+
+  --color-amber-50: #fff5ec;
+  --color-amber-100: #ffe6d1;
+  --color-amber-200: #ffcda6;
+  --color-amber-300: #ffab6b;
+  --color-amber-400: #fb8a33;
+  --color-amber-500: #f56900;
+  --color-amber-600: #d95c00;
+  --color-amber-700: #b04a00;
+  --color-amber-800: #8a3a00;
+  --color-amber-900: #6b2e00;
+
+  --color-cyan-50: #eefafb;
+  --color-cyan-100: #d3f2f5;
+  --color-cyan-200: #a9e4ea;
+  --color-cyan-300: #6fd0da;
+  --color-cyan-400: #2fb6c5;
+  --color-cyan-500: #00a1b3;
+  --color-cyan-600: #008a99;
+  --color-cyan-700: #00707d;
+  --color-cyan-800: #005962;
+  --color-cyan-900: #00474f;
 }
 
 /* ------------------------------------------------------------------
@@ -179,33 +219,33 @@
  * ------------------------------------------------------------------ */
 @layer base {
   html {
-    background: var(--color-frost);
-    color-scheme: light;
+    background: var(--color-pure-black);
+    color-scheme: dark;
   }
   body {
-    background: var(--color-frost);
-    color: var(--color-carbon);
+    background: var(--color-pure-black);
+    color: var(--color-frost-white);
     font-family: var(--font-sf-pro-text);
     font-weight: 400;
-    font-size: 17px;
-    line-height: 1.47;
-    letter-spacing: -0.016em;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -0.22px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "numr" 0;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-sf-pro-display);
   }
   ::selection {
-    background: #b3d7ff;
-    color: var(--color-carbon);
-  }
-  input::placeholder, textarea::placeholder {
-    color: var(--color-mist);
+    background: var(--color-apple-blue);
+    color: #ffffff;
   }
   input, textarea, select {
     font-family: inherit;
+    color-scheme: light;
+  }
+  input::placeholder, textarea::placeholder {
+    color: var(--color-platinum);
   }
   input:focus-visible, textarea:focus-visible, select:focus-visible {
     outline: 2px solid var(--color-apple-blue);
@@ -213,98 +253,154 @@
   }
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+    scrollbar-color: rgba(134, 134, 139, 0.5) transparent;
+  }
+  /* Tabular numerals for all numeric data */
+  .font-mono, td, th {
+    font-variant-numeric: tabular-nums;
   }
 }
 
 /* ------------------------------------------------------------------
- * Apple component primitives
+ * Component primitives
  * ------------------------------------------------------------------ */
 
-/* Filled Pill Button — the single filled interactive element */
+/* Primary CTA — the single filled chromatic button per viewport */
 @utility btn-primary {
   background: var(--color-apple-blue);
-  color: var(--color-ice);
+  color: #ffffff;
   border: 1px solid transparent;
-  border-radius: 980px;
-  padding: 11px 15px;
-  font-weight: 400;
-  font-size: 17px;
+  border-radius: 36px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.18;
-  letter-spacing: -0.016em;
+  letter-spacing: -0.22px;
   transition: background-color 150ms ease;
   &:hover { background: #0077ed; }
-  &:disabled { background: var(--color-pebble); color: var(--color-mist); cursor: not-allowed; }
+  &:disabled { background: var(--color-pebble); color: var(--color-platinum); cursor: not-allowed; }
 }
 
-/* Outlined Pill Button — secondary, paired with a filled primary */
-@utility btn-outline {
-  background: transparent;
-  color: var(--color-link-blue);
-  border: 1px solid var(--color-link-blue);
-  border-radius: 980px;
-  padding: 11px 15px;
-  font-weight: 400;
-  font-size: 17px;
+/* Secondary — quiet neutral fill (light band: pebble · dark stage: graphite) */
+@utility btn-secondary {
+  background: var(--color-pebble);
+  color: var(--color-obsidian);
+  border: 1px solid transparent;
+  border-radius: 36px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.18;
-  letter-spacing: -0.016em;
-  transition: background-color 150ms ease, color 150ms ease;
-  &:hover { background: var(--color-link-blue); color: var(--color-ice); }
+  letter-spacing: -0.22px;
+  transition: background-color 150ms ease;
+  &:hover { background: #dcdce0; }
+}
+@utility btn-secondary-dark {
+  background: var(--color-graphite);
+  color: var(--color-frost-white);
+  border: 1px solid transparent;
+  border-radius: 36px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.22px;
+  transition: background-color 150ms ease;
+  &:hover { background: #3f3f43; }
+}
+
+/* Ghost label — borderless text button beside the CTA */
+@utility btn-ghost-label {
+  background: transparent;
+  border: 0;
+  border-radius: 36px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.22px;
+  color: inherit;
 }
 
 /* Compact variants for dense UI */
 @utility btn-sm {
-  padding: 8px 15px;
-  font-size: 14px;
+  padding: 8px 16px;
+  font-size: 13px;
 }
 @utility btn-xs {
   padding: 6px 12px;
   font-size: 12px;
 }
 
-/* Pebble Pill — neutral tertiary button / segmented control track */
-@utility btn-pebble {
+/* Backwards-compatible alias: outlined → secondary */
+@utility btn-outline {
   background: var(--color-pebble);
-  color: var(--color-carbon);
+  color: var(--color-obsidian);
   border: 1px solid transparent;
-  border-radius: 980px;
-  font-weight: 400;
+  border-radius: 36px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.22px;
   transition: background-color 150ms ease;
-  &:hover { background: #d6d6db; }
+  &:hover { background: #dcdce0; }
 }
 
-/* Ghost Link — underline on hover only */
+/* Inline link — link blue on light, halo blue on dark */
 @utility link {
   color: var(--color-link-blue);
   background: transparent;
   border: 0;
-  font-weight: 400;
+  &:hover { text-decoration: underline; }
+}
+@utility link-dark {
+  color: var(--color-halo-blue);
+  background: transparent;
+  border: 0;
   &:hover { text-decoration: underline; }
 }
 
-/* Hairline rule */
-@utility hairline {
-  border-color: var(--color-hairline);
+/* Category eyebrow — Signal Orange, 17px/600, no chrome */
+@utility eyebrow {
+  color: var(--color-signal-orange);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.19px;
+  line-height: 1.24;
 }
+@utility eyebrow-violet { color: var(--color-iris-violet); font-size: 17px; font-weight: 600; letter-spacing: -0.19px; line-height: 1.24; }
+@utility eyebrow-teal { color: var(--color-reef-teal); font-size: 17px; font-weight: 600; letter-spacing: -0.19px; line-height: 1.24; }
 
-/* White surface with hairline (used where data density requires containment) */
+/* Hairlines */
+@utility hairline { border-color: var(--color-hairline); }
+@utility hairline-dark { border-color: var(--color-smoke); }
+
+/* Surfaces */
 @utility surface {
-  background: #ffffff;
-  border: 1px solid var(--color-hairline);
-  border-radius: 8px;
+  background: var(--color-frost-white);
+  border-radius: 28px;
+}
+@utility surface-dark {
+  background: var(--color-obsidian);
+  border-radius: 28px;
 }
 
-/* Italic product-variant accent (e.g. "iPad air") */
+/* Italic accent kept for compatibility — halo blue */
 @utility text-variant {
   font-style: italic;
   font-weight: 400;
-  color: var(--color-signal-blue);
+  color: var(--color-halo-blue);
 }
 
-/* Tight display tracking helpers */
-@utility tracking-display { letter-spacing: 0.616px; }
-@utility tracking-heading { letter-spacing: 0.44px; }
-@utility tracking-text { letter-spacing: -0.016em; }
+/* Display tracking helpers */
+@utility tracking-hero { letter-spacing: -0.24px; }
+@utility tracking-display { letter-spacing: -0.84px; }
+@utility tracking-heading { letter-spacing: -0.24px; }
+
+/* Only permitted gradient: black → carbon stage transition */
+@utility stage-fade {
+  background-image: linear-gradient(180deg, #000000 0%, #111111 100%);
+}
 
 /* ------------------------------------------------------------------
  * Print
