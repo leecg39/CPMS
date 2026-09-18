@@ -330,10 +330,13 @@ export default function App() {
           </div>
         </section>
 
-        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-10 pb-24 flex flex-col gap-16">
-        {/* Interactive 7-Phase Workflow Pipeline */}
-        <InteractiveWorkflowBar onSelectManual={handleOpenManual} />
+        <div className="max-w-[1440px] w-full mx-auto px-6 lg:px-10 pb-24 flex flex-col lg:flex-row gap-6 lg:gap-8">
+        <InteractiveWorkflowBar
+          onSelectManual={handleOpenManual}
+          selectedManualId={selectedManual?.id}
+        />
 
+        <div className="flex-1 min-w-0 flex flex-col gap-16">
         {/* VIEW 1: MANUAL HUB (전체 한글 매뉴얼) */}
         {activeTab === 'manual-hub' && (
           <ManualView onSelectManual={handleOpenManual} searchTerm={searchTerm} />
@@ -385,6 +388,7 @@ export default function App() {
             onViewInvoicePdf={(inv) => setSelectedInvoiceForPdf(inv)}
           />
         )}
+        </div>
         </div>
       </main>
 
